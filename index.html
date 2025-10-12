@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indicadores Octubre 2025</title>
+    <style>
+        :root {
+            /* Page vivid background + neutral cards */
+            --page-bg-1: #0058b3; /* vivid deep blue */
+            --page-bg-2: #0078D4; /* vivid lighter blue */
+            --card-bg: #ffffff; /* card/background of content */
+            --text: #111827; /* dark text */
+            --muted: #6b7280; /* muted text */
+            --accent-600: #0078D4; /* vivid Fluent blue */
+            --accent-400: #60a5fa; /* lighter vivid blue */
+            --header-1: linear-gradient(135deg, #60a5fa 0%, #0078D4 100%); /* lively table header */
+            --success-bg: #f3f4f6;
+            --success-text: #111827;
+            --warning-bg: #f3f4f6;
+            --warning-text: #111827;
+            --danger-bg: #f3f4f6;
+            --danger-text: #111827;
+            --card-shadow: 0 6px 18px rgba(16,24,40,0.04);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(180deg, var(--page-bg-1) 0%, var(--page-bg-2) 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: var(--text);
+        }
+
+        .container {
+            max-width: 1800px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            color: var(--text);
+            margin-bottom: 40px;
+            animation: fadeInDown 0.8s ease;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.08);
+            color: var(--text);
+        }
+
+    /* (theme toggle removed) */
+
+        .subtitle {
+            font-size: 1.1rem;
+            font-weight: 300;
+            opacity: 0.95;
+        }
+
+        /* Q1 y Q2 lado a lado */
+        .quarters-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        /* Quarter Section */
+        .quarter-section {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: var(--card-shadow);
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .quarter-title {
+            font-size: 1.5rem;
+            color: var(--accent-600);
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid var(--accent-600);
+            font-weight: 600;
+            text-align: center;
+        }
+
+        /* Table Style */
+        .indicators-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin-bottom: 25px;
+        }
+
+        .table-header {
+            background: var(--header-1);
+            color: white;
+        }
+
+        .table-header th {
+            padding: 15px 12px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-right: 1px solid rgba(255,255,255,0.12);
+        }
+
+        .table-header th:first-child {
+            border-top-left-radius: 12px;
+        }
+
+        .table-header th:last-child {
+            border-top-right-radius: 12px;
+            border-right: none;
+        }
+
+        .table-row {
+            background: var(--card-bg);
+            transition: background 0.12s ease;
+        }
+
+        .table-row:hover {
+            background: #ffffff;
+        }
+
+        .table-row td {
+            padding: 14px 12px;
+            border-bottom: 1px solid #e6eef8;
+            border-right: 1px solid #e6eef8;
+            vertical-align: middle;
+            font-size: 0.85rem;
+            color: var(--text);
+        }
+
+        .table-row td:last-child {
+            border-right: none;
+        }
+
+        .table-row:last-child td:first-child {
+            border-bottom-left-radius: 12px;
+        }
+
+        .table-row:last-child td:last-child {
+            border-bottom-right-radius: 12px;
+        }
+
+        .category-cell {
+            font-weight: 600;
+            color: #0b2545;
+            width: 20%;
+        }
+
+        .meta-cell {
+            width: 25%;
+            color: var(--muted);
+        }
+
+        .estado-cell {
+            width: 15%;
+            text-align: center;
+        }
+
+        .progress-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .progress-bar {
+            flex: 1;
+            height: 24px;
+            background: #f3f4f6;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-400) 0%, var(--accent-600) 100%);
+            border-radius: 12px;
+            transition: width 1.2s ease;
+            width: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: white;
+        }
+
+        /* Badge color variants based on percentage */
+        .badge-good {
+            background: #16a34a; /* green */
+            color: white;
+        }
+
+        .badge-warn {
+            background: #f59e0b; /* amber/orange */
+            color: white;
+        }
+
+        .badge-bad {
+            background: #dc2626; /* red */
+            color: white;
+        }
+
+        .progress-text {
+            font-weight: 700;
+            color: #495057;
+            min-width: 50px;
+            text-align: right;
+        }
+
+        .estado-actual-cell {
+            width: 15%;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .status-completado {
+            background: #f3f4f6;
+            color: var(--text);
+        }
+
+        .status-proceso {
+            background: #f3f4f6;
+            color: var(--text);
+        }
+
+        .status-pendiente {
+            background: #f3f4f6;
+            color: var(--text);
+        }
+
+        /* More specific rules so dynamically-added badge classes override status-* styles */
+        .status-badge.badge-good {
+            background: #16a34a !important; /* green */
+            color: white !important;
+            box-shadow: none;
+            transition: background 0.18s ease;
+        }
+
+        .status-badge.badge-warn {
+            background: #f59e0b !important; /* amber/orange */
+            color: white !important;
+            box-shadow: none;
+            transition: background 0.18s ease;
+        }
+
+        .status-badge.badge-bad {
+            background: #dc2626 !important; /* red */
+            color: white !important;
+            box-shadow: none;
+            transition: background 0.18s ease;
+        }
+
+        /* Force pending label to be orange regardless of other classes/inline styles */
+        .status-badge.status-pendiente {
+            background-color: #f59e0b !important; /* amber/orange */
+            color: #ffffff !important;
+            box-shadow: none;
+        }
+
+        .observaciones-cell {
+            width: 25%;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: #6c757d;
+        }
+
+        /* Observations Section */
+        .observations {
+            /* use same vivid page background for observations */
+            background: linear-gradient(180deg, var(--page-bg-1) 0%, var(--page-bg-2) 100%);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 25px;
+            color: white;
+            border-left: 0;
+        }
+
+        .observations-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .observations-icon {
+            font-size: 1.3rem;
+        }
+
+        .observations-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .observations-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .observations-list li {
+            padding: 8px 0;
+            line-height: 1.5;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .observations-list li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            font-size: 1.3rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            color: var(--muted);
+            padding: 30px;
+            font-size: 0.95rem;
+            opacity: 0.9;
+            animation: fadeIn 1s ease;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .indicators-table {
+                font-size: 0.9rem;
+            }
+            
+            .table-header th,
+            .table-row td {
+                padding: 12px 10px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .quarter-section {
+                padding: 20px;
+                overflow-x: auto;
+            }
+
+            .indicators-table {
+                min-width: 800px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>📊 Indicadores Octubre 2025</h1>
+        </header>
+
+        <!-- Q1 y Q2 lado a lado -->
+        <div class="quarters-container">
+            
+            <!-- Q1 Section -->
+            <section class="quarter-section">
+                <h2 class="quarter-title"> (Q1)</h2>
+            
+            <table class="indicators-table">
+                <thead class="table-header">
+                    <tr>
+                        <th>📋 CATEGORÍA / INDICADOR</th>
+                        <th>🎯 META Q1</th>
+                        <th>📊 ESTADO Q1 (%)</th>
+                        <th>✅ ESTADO ACTUAL</th>
+                        <th>📝 OBSERVACIONES</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- FILA 1 -->
+                    <tr class="table-row">
+                        <td class="category-cell">💻 Funcionamiento de Sistemas</td>
+                        <td class="meta-cell">100% Operativo</td>
+                        <td class="estado-cell">
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-progress="75"></div>
+                                </div>
+                                <span class="progress-text">0%</span>
+                            </div>
+                        </td>
+                        <td class="estado-actual-cell">
+                            <span class="status-badge status-proceso">En Proceso</span>
+                        </td>
+                        <td class="observaciones-cell">
+                          esta semana se tuvo Odoo y 3CX inestables. Ticket con Xetechs -Odoo problema en canales WhatsApp
+                        </td>
+                    </tr>
+
+                    <!-- FILA 2 -->
+                    <tr class="table-row">
+                        <td class="category-cell">🌐 Conectividad Estable</td>
+                        <td class="meta-cell">Mantener estabilidad en todas las agencias</td>
+                        <td class="estado-cell">
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-progress="90"></div>
+                                </div>
+                                <span class="progress-text">0%</span>
+                            </div>
+                        </td>
+                        <td class="estado-actual-cell">
+                            <span class="status-badge status-completado">Completado</span>
+                        </td>
+                        <td class="observaciones-cell">
+                            Petén sin internet por falla ISP. Resuelto el mismo día
+                        </td>
+                    </tr>
+
+                    <!-- FILA 3 -->
+                    <tr class="table-row">
+                        <td class="category-cell">📹 Transformador Cámaras</td>
+                        <td class="meta-cell">Instalación transformador en Escuintla</td>
+                        <td class="estado-cell">
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-progress="80"></div>
+                                </div>
+                                <span class="progress-text">80%</span>
+                            </div>
+                        </td>
+                        <td class="estado-actual-cell">
+                            <span class="status-badge status-pendiente">Pendiente</span>
+                        </td>
+                        <td class="observaciones-cell">
+                            Pendiente programar visita técnica a la agencia
+                        </td>
+                    </tr>
+
+                    <!-- FILA 4 -->
+                    <tr class="table-row">
+                        <td class="category-cell">🔧 Mantenimiento Preventivo</td>
+                        <td class="meta-cell">Completar 5/5 agencias programadas</td>
+                        <td class="estado-cell">
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-progress="80"></div>
+                                </div>
+                                <span class="progress-text">0%</span>
+                            </div>
+                        </td>
+                        <td class="estado-actual-cell">
+                            <span class="status-badge status-proceso">4/5</span>
+                        </td>
+                        <td class="observaciones-cell">
+                            Completado 4 agencias. Pendiente: visita a Cobán
+                        </td>
+                    </tr>
+
+                    <!-- FILA 5 -->
+                    <tr class="table-row">
+                        <td class="category-cell">📋 Formulario Entrevista</td>
+                        <td class="meta-cell">Implementación y capacitación del formulario</td>
+                        <td class="estado-cell">
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-progress="100"></div>
+                                </div>
+                                <span class="progress-text">0%</span>
+                            </div>
+                        </td>
+                        <td class="estado-actual-cell">
+                            <span class="status-badge status-completado">Completado</span>
+                        </td>
+                        <td class="observaciones-cell">
+                            Video tutorial publicado en Odoo. Consultar necesidad de capacitación presencial
+                        </td>
+                    </tr>
+
+                    <!-- FILA 6 -->
+                    <tr class="table-row">
+                        <td class="category-cell">✅ Wassix Contabilidad</td>
+                        <td class="meta-cell">Capacitación equipo contabilidad</td>
+                        <td class="estado-cell">
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-progress="100"></div>
+                                </div>
+                                <span class="progress-text">0%</span>
+                            </div>
+                        </td>
+                        <td class="estado-actual-cell">
+                            <span class="status-badge status-completado">Completado</span>
+                        </td>
+                        <td class="observaciones-cell">
+                            Capacitación finalizada. Hoja de asistencia firmada
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Observaciones Generales Q1 -->
+            <div class="observations">
+                <div class="observations-header">
+                    <span class="observations-icon">📋</span>
+                    <div class="observations-title">Observaciones Generales</div>
+                </div>
+                <ul class="observations-list">
+                    <li>Se logró completar el 80% de los objetivos de la semana 1</li>
+                    <li>en monitoreo: estabilidad de sistemas Odoo y 3CX</li>
+                    <li>Mantenimientos preventivos con buen avance (4/5)</li>
+                    <li>Capacitaciones completadas exitosamente</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Q2 Section -->
+        <section class="quarter-section">
+            <h2 class="quarter-title"> (Q2)</h2>
+            
+            <table class="indicators-table">
+                <thead class="table-header">
+                    <tr>
+                        <th>📋 CATEGORÍA / INDICADOR</th>
+                        <th>🎯 META Q2</th>
+                        <th>📊 ESTADO Q2 (%)</th>
+                        <th>✅ ESTADO ACTUAL</th>
+                        <th>📝 OBSERVACIONES</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- FILA 1 -->
+                    <tr class="table-row">
+                        <td class="category-cell">💻 Funcionamiento de Sistemas</td>
+                        <td class="meta-cell">100% Operativo - Sistemas estables sin errores ni inestabilidad</td>
+                        <td class="estado-cell">
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-progress="0"></div>
+                                </div>
+                                <span class="progress-text">0%</span>
+                            </div>
+                        </td>
+                        <td class="estado-actual-cell">
+                            <span class="status-badge status-pendiente">A Iniciar</span>
+                        </td>
+                        <td class="observaciones-cell">
+                            Pendiente iniciar monitoreo y seguimiento de estabilidad de sistemas
+                        </td>
+                    </tr>
+
+                    <!-- FILA 2 -->
+                    <tr class="table-row">
+                        <td class="category-cell">🌐 Conectividad Estable</td>
+                        <td class="meta-cell">Mantener 50 Mbps sin caídas en todas las agencias</td>
+                        <td class="estado-cell">
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-progress="0"></div>
+                                </div>
+                                <span class="progress-text">0%</span>
+                            </div>
+                        </td>
+                        <td class="estado-actual-cell">
+                            <span class="status-badge status-pendiente">A Iniciar</span>
+                        </td>
+                        <td class="observaciones-cell">
+                            Pendiente iniciar mediciones y validación de velocidad en agencias
+                        </td>
+                    </tr>
+
+                    <!-- FILA 3 -->
+                    <tr class="table-row">
+                        <td class="category-cell">📹 Transformador Cámaras Escuintla</td>
+                        <td class="meta-cell">Completar instalación y restablecer funcionamiento de cámaras</td>
+                        <td class="estado-cell">
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-progress="80"></div>
+                                </div>
+                                <span class="progress-text">80%</span>
+                            </div>
+                        </td>
+                        <td class="estado-actual-cell">
+                            <span class="status-badge status-pendiente">Pendiente</span>
+                        </td>
+                        <td class="observaciones-cell">
+                            Visita técnica pendiente. Cámaras sin funcionar hasta instalación de transformador
+                        </td>
+                    </tr>
+
+                    <!-- FILA 4 -->
+                    <tr class="table-row">
+                        <td class="category-cell">🔧 Mantenimiento Preventivo Cobán</td>
+                        <td class="meta-cell">Completar mantenimiento preventivo en agencia Cobán</td>
+                        <td class="estado-cell">
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-progress="80"></div>
+                                </div>
+                                <span class="progress-text">80%</span>
+                            </div>
+                        </td>
+                        <td class="estado-actual-cell">
+                            <span class="status-badge status-pendiente">Pendiente</span>
+                        </td>
+                        <td class="observaciones-cell">
+                            Visita pendiente para completar el ciclo de mantenimientos de agencias
+                        </td>
+                    </tr>
+
+                    <!-- FILA 5 -->
+                    <tr class="table-row">
+                        <td class="category-cell">📋 Formulario Entrevista</td>
+                        <td class="meta-cell">Validar necesidad de capacitación presencial adicional</td>
+                        <td class="estado-cell">
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-progress="100"></div>
+                                </div>
+                                <span class="progress-text">0%</span>
+                            </div>
+                        </td>
+                        <td class="estado-actual-cell">
+                            <span class="status-badge status-completado">Completado</span>
+                        </td>
+                        <td class="observaciones-cell">
+                            Video tutorial publicado y disponible. Pendiente validar si se requiere refuerzo presencial
+                        </td>
+                    </tr>
+
+                    <!-- FILA 6 -->
+                    <tr class="table-row">
+                        <td class="category-cell">✅ Wassix Contabilidad</td>
+                        <td class="meta-cell">Capacitación completa del equipo de contabilidad</td>
+                        <td class="estado-cell">
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-progress="100"></div>
+                                </div>
+                                <span class="progress-text">0%</span>
+                            </div>
+                        </td>
+                        <td class="estado-actual-cell">
+                            <span class="status-badge status-completado">Completado</span>
+                        </td>
+                        <td class="observaciones-cell">
+                            Capacitación finalizada exitosamente. Hoja de asistencia firmada por participantes
+                        </td>
+                    </tr>
+
+                    <!-- FILA 7 -->
+                    <tr class="table-row">
+                        <td class="category-cell">📄 Wassix Cheques Retenidos QA</td>
+                        <td class="meta-cell">Capacitación equipo QA sobre nuevo número</td>
+                        <td class="estado-cell">
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-progress="100"></div>
+                                </div>
+                                <span class="progress-text">0%</span>
+                            </div>
+                        </td>
+                        <td class="estado-actual-cell">
+                            <span class="status-badge status-completado">Completado</span>
+                        </td>
+                        <td class="observaciones-cell">
+                            Capacitación completada. Equipo QA operando correctamente con nuevo número
+                        </td>
+                    </tr>
+
+                    <!-- FILA 8 -->
+                    <tr class="table-row">
+                        <td class="category-cell">🏢 Mantenimientos Agencia Central</td>
+                        <td class="meta-cell">Completar 8 áreas programadas (1 área por semana)</td>
+                        <td class="estado-cell">
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-progress="12"></div>
+                                </div>
+                                <span class="progress-text">0%</span>
+                            </div>
+                        </td>
+                        <td class="estado-actual-cell">
+                            <span class="status-badge status-proceso">1/8</span>
+                        </td>
+                        <td class="observaciones-cell">
+                            Proceso pausado temporalmente. Reinicio programado esta semana. 1 área completada, 7 pendientes (7 semanas restantes)
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Observaciones Generales Q2 -->
+            <div class="observations">
+                <div class="observations-header">
+                    <span class="observations-icon">📋</span>
+                    <div class="observations-title">Observaciones Generales</div>
+                </div>
+                <ul class="observations-list">
+                    <li>Capacitaciones completadas exitosamente: Wassix Contabilidad y Cheques Retenidos QA finalizadas</li>
+                    <li>Pendientes principales: Visita técnica Escuintla (transformador cámaras) y mantenimiento Cobán</li>
+                    <li>Mantenimientos Agencia Central: 1/8 áreas completadas. Proyección de finalización: fin de mes</li>
+                    <li>Monitoreo de sistemas y conectividad: A iniciar seguimiento continuo para cumplir metas de estabilidad</li>
+                    <li>Formulario Entrevista: Implementación exitosa. Evaluando necesidad de capacitación presencial</li>
+                </ul>
+            </div>
+        </section>
+
+        </div>
+
+        <!-- Footer -->
+        <footer>
+        </footer>
+    </div>
+
+    <script>
+    /* theme toggle removed */
+
+        // Colorear badges según porcentaje y animar barras
+        window.addEventListener('load', function() {
+            const progressBars = document.querySelectorAll('.progress-fill');
+
+            progressBars.forEach((bar, index) => {
+                const percentage = parseInt(bar.getAttribute('data-progress') || '0', 10);
+                const textElement = bar.closest('.progress-container').querySelector('.progress-text');
+
+                // asignar clase al badge de la misma fila (con pequeño timeout para asegurar render)
+                const row = bar.closest('.table-row');
+                if (row) {
+                    const badge = row.querySelector('.status-badge');
+                    if (badge) {
+                        // limpiar estilos inline que puedan interferir
+                        badge.style.background = '';
+                        badge.style.color = '';
+                        badge.classList.remove('badge-good', 'badge-warn', 'badge-bad');
+                        setTimeout(() => {
+                            if (percentage >= 80) {
+                                badge.classList.add('badge-good');
+                                badge.style.backgroundColor = '#16a34a';
+                                badge.style.color = '#ffffff';
+                            }
+                            else if (percentage >= 40) {
+                                badge.classList.add('badge-warn');
+                                badge.style.backgroundColor = '#f59e0b';
+                                badge.style.color = '#ffffff';
+                            }
+                            else {
+                                badge.classList.add('badge-bad');
+                                badge.style.backgroundColor = '#dc2626';
+                                badge.style.color = '#ffffff';
+                            }
+                        }, 20);
+                    }
+                }
+
+                setTimeout(() => {
+                    bar.style.width = percentage + '%';
+                    animatePercentage(textElement, percentage);
+                }, 200 * (index + 1));
+            });
+        });
+
+        function animatePercentage(element, target) {
+            let current = 0;
+            const increment = target / 50;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.round(current) + '%';
+            }, 20);
+        }
+    </script>
+</body>
+</html>
