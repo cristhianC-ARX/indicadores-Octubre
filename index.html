@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -73,7 +74,7 @@
         /* Q1 y Q2 lado a lado */
         .quarters-container {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr;
             gap: 25px;
             margin-bottom: 30px;
         }
@@ -285,10 +286,17 @@
         }
 
         .observaciones-cell {
-            width: 25%;
-            font-size: 0.9rem;
-            line-height: 1.5;
+            width: 30%;
+            font-size: 0.75rem;
+            line-height: 1.4;
             color: #6c757d;
+            vertical-align: top;
+        }
+
+        .observaciones-cell strong {
+            color: var(--accent-600);
+            font-weight: 600;
+            font-size: 0.7rem;
         }
 
         /* Observations Section */
@@ -339,6 +347,51 @@
             position: absolute;
             left: 0;
             font-size: 1.3rem;
+        }
+
+        /* Observaciones Consolidadas */
+        .observaciones-consolidadas {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .obs-item {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 20px;
+            border-left: 4px solid var(--accent-600);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .obs-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .obs-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--accent-600);
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .obs-content p {
+            margin-bottom: 10px;
+            line-height: 1.6;
+            color: var(--text);
+            font-size: 0.9rem;
+        }
+
+        .obs-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .obs-content strong {
+            color: var(--accent-600);
+            font-weight: 600;
         }
 
         /* Footer */
@@ -419,7 +472,7 @@
             
             <!-- Q1 Section -->
             <section class="quarter-section">
-                <h2 class="quarter-title"> (Q1)</h2>
+                <h2 class="quarter-title"> (Semana 40)</h2>
             
             <table class="indicators-table">
                 <thead class="table-header">
@@ -428,7 +481,7 @@
                         <th>🎯 META Q1</th>
                         <th>📊 ESTADO Q1 (%)</th>
                         <th>✅ ESTADO ACTUAL</th>
-                        <th>📝 OBSERVACIONES</th>
+                        <th>📝 OBSERVACIONES (S40 )</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -448,7 +501,7 @@
                             <span class="status-badge status-proceso">En Proceso</span>
                         </td>
                         <td class="observaciones-cell">
-                          esta semana se tuvo Odoo y 3CX inestables. Ticket con Xetechs -Odoo problema en canales WhatsApp
+                            <strong>S40:</strong> Odoo y 3CX inestables. Ticket Xetechs<br>
                         </td>
                     </tr>
 
@@ -468,7 +521,7 @@
                             <span class="status-badge status-completado">Completado</span>
                         </td>
                         <td class="observaciones-cell">
-                            Petén sin internet por falla ISP. Resuelto el mismo día
+                            <strong>S40:</strong> Petén sin internet, resuelto mismo día<br>
                         </td>
                     </tr>
 
@@ -488,7 +541,7 @@
                             <span class="status-badge status-pendiente">Pendiente</span>
                         </td>
                         <td class="observaciones-cell">
-                            Pendiente programar visita técnica a la agencia
+                            <strong>S40:</strong> Pendiente visita técnica<br>
                         </td>
                     </tr>
 
@@ -508,7 +561,7 @@
                             <span class="status-badge status-proceso">4/5</span>
                         </td>
                         <td class="observaciones-cell">
-                            Completado 4 agencias. Pendiente: visita a Cobán
+                            <strong>S40:</strong> 4 agencias completadas, pendiente Cobán<br>
                         </td>
                     </tr>
 
@@ -528,7 +581,7 @@
                             <span class="status-badge status-completado">Completado</span>
                         </td>
                         <td class="observaciones-cell">
-                            Video tutorial publicado en Odoo. Consultar necesidad de capacitación presencial
+                            <strong>S40:</strong> Video tutorial publicado<br>
                         </td>
                     </tr>
 
@@ -548,7 +601,7 @@
                             <span class="status-badge status-completado">Completado</span>
                         </td>
                         <td class="observaciones-cell">
-                            Capacitación finalizada. Hoja de asistencia firmada
+                            <strong>S40:</strong> Capacitación finalizada<br>
                         </td>
                     </tr>
                 </tbody>
@@ -571,7 +624,7 @@
 
         <!-- Q2 Section -->
         <section class="quarter-section">
-            <h2 class="quarter-title"> (Q2)</h2>
+            <h2 class="quarter-title"> (Semana 41)</h2>
             
             <table class="indicators-table">
                 <thead class="table-header">
@@ -580,7 +633,7 @@
                         <th>🎯 META Q2</th>
                         <th>📊 ESTADO Q2 (%)</th>
                         <th>✅ ESTADO ACTUAL</th>
-                        <th>📝 OBSERVACIONES</th>
+                        <th>📝 OBSERVACIONES (S40 | S41 )</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -591,16 +644,17 @@
                         <td class="estado-cell">
                             <div class="progress-container">
                                 <div class="progress-bar">
-                                    <div class="progress-fill" data-progress="0"></div>
+                                    <div class="progress-fill" data-progress="90"></div>
                                 </div>
                                 <span class="progress-text">0%</span>
                             </div>
                         </td>
                         <td class="estado-actual-cell">
-                            <span class="status-badge status-pendiente">A Iniciar</span>
+                            <span class="status-badge status-completado">Completado</span>
                         </td>
                         <td class="observaciones-cell">
-                            Pendiente iniciar monitoreo y seguimiento de estabilidad de sistemas
+                            <strong>S40:</strong> Odoo y 3CX inestables. Ticket Xetechs<br>
+                            <strong>S41:</strong> Bloque de Wassix, monitoreo Odoo<br>
                         </td>
                     </tr>
 
@@ -611,16 +665,17 @@
                         <td class="estado-cell">
                             <div class="progress-container">
                                 <div class="progress-bar">
-                                    <div class="progress-fill" data-progress="0"></div>
+                                    <div class="progress-fill" data-progress="100"></div>
                                 </div>
                                 <span class="progress-text">0%</span>
                             </div>
                         </td>
                         <td class="estado-actual-cell">
-                            <span class="status-badge status-pendiente">A Iniciar</span>
+                            <span class="status-badge status-completado">Completado</span>
                         </td>
                         <td class="observaciones-cell">
-                            Pendiente iniciar mediciones y validación de velocidad en agencias
+                            <strong>S40:</strong> Petén sin internet, resuelto mismo día<br>
+                            <strong>S41:</strong> Estable, sin tickets<br>
                         </td>
                     </tr>
 
@@ -631,16 +686,17 @@
                         <td class="estado-cell">
                             <div class="progress-container">
                                 <div class="progress-bar">
-                                    <div class="progress-fill" data-progress="80"></div>
+                                    <div class="progress-fill" data-progress="100"></div>
                                 </div>
-                                <span class="progress-text">80%</span>
+                                <span class="progress-text">100%</span>
                             </div>
                         </td>
                         <td class="estado-actual-cell">
-                            <span class="status-badge status-pendiente">Pendiente</span>
+                            <span class="status-badge status-completado">Completado</span>
                         </td>
                         <td class="observaciones-cell">
-                            Visita técnica pendiente. Cámaras sin funcionar hasta instalación de transformador
+                            <strong>S40:</strong> Pendiente visita técnica<br>
+                            <strong>S41:</strong> Completado<br>
                         </td>
                     </tr>
 
@@ -660,7 +716,8 @@
                             <span class="status-badge status-pendiente">Pendiente</span>
                         </td>
                         <td class="observaciones-cell">
-                            Visita pendiente para completar el ciclo de mantenimientos de agencias
+                            <strong>S40:</strong> 4 agencias completadas, pendiente Cobán<br>
+                            <strong>S41:</strong> Pendiente aún visita<br>
                         </td>
                     </tr>
 
@@ -680,7 +737,8 @@
                             <span class="status-badge status-completado">Completado</span>
                         </td>
                         <td class="observaciones-cell">
-                            Video tutorial publicado y disponible. Pendiente validar si se requiere refuerzo presencial
+                            <strong>S40:</strong> Video tutorial publicado<br>
+                            <strong>S41:</strong> Disponible, validar refuerzo<br>
                         </td>
                     </tr>
 
@@ -700,7 +758,8 @@
                             <span class="status-badge status-completado">Completado</span>
                         </td>
                         <td class="observaciones-cell">
-                            Capacitación finalizada exitosamente. Hoja de asistencia firmada por participantes
+                            <strong>S40:</strong> Capacitación finalizada<br>
+                            <strong>S41:</strong> Hoja firmada por participantes<br>
                         </td>
                     </tr>
 
@@ -720,7 +779,8 @@
                             <span class="status-badge status-completado">Completado</span>
                         </td>
                         <td class="observaciones-cell">
-                            Capacitación completada. Equipo QA operando correctamente con nuevo número
+                            <strong>S40:</strong> N/A<br>
+                            <strong>S41:</strong> Capacitación completada. Equipo QA operando<br>
                         </td>
                     </tr>
 
@@ -731,16 +791,17 @@
                         <td class="estado-cell">
                             <div class="progress-container">
                                 <div class="progress-bar">
-                                    <div class="progress-fill" data-progress="12"></div>
+                                    <div class="progress-fill" data-progress="25"></div>
                                 </div>
                                 <span class="progress-text">0%</span>
                             </div>
                         </td>
                         <td class="estado-actual-cell">
-                            <span class="status-badge status-proceso">1/8</span>
+                            <span class="status-badge status-proceso">2/8</span>
                         </td>
                         <td class="observaciones-cell">
-                            Proceso pausado temporalmente. Reinicio programado esta semana. 1 área completada, 7 pendientes (7 semanas restantes)
+                            <strong>S40:</strong> N/A<br>
+                            <strong>S41:</strong> Se empezó con créditos y cobros<br>
                         </td>
                     </tr>
                 </tbody>
@@ -758,6 +819,126 @@
                     <li>Mantenimientos Agencia Central: 1/8 áreas completadas. Proyección de finalización: fin de mes</li>
                     <li>Monitoreo de sistemas y conectividad: A iniciar seguimiento continuo para cumplir metas de estabilidad</li>
                     <li>Formulario Entrevista: Implementación exitosa. Evaluando necesidad de capacitación presencial</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Q3 Section (Semana 42) -->
+        <section class="quarter-section">
+            <h2 class="quarter-title"> (Semana 42)</h2>
+            
+            <table class="indicators-table">
+                <thead class="table-header">
+                    <tr>
+                        <th>📋 CATEGORÍA / INDICADOR</th>
+                        <th>🎯 META Q3</th>
+                        <th>📊 ESTADO Q3 (%)</th>
+                        <th>✅ ESTADO ACTUAL</th>
+                        <th>📝 OBSERVACIONES (S40 | S41 | S42)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- FILA 1 -->
+                    <tr class="table-row">
+                        <td class="category-cell">💻 Funcionamiento de Sistemas</td>
+                        <td class="meta-cell">100% Operativo - Sistemas estables sin errores ni inestabilidad</td>
+                        <td class="estado-cell">
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-progress="0"></div>
+                                </div>
+                                <span class="progress-text">0%</span>
+                            </div>
+                        </td>
+                        <td class="estado-actual-cell">
+                            <span class="status-badge status-pendiente">A Iniciar</span>
+                        </td>
+                        <td class="observaciones-cell">
+                            <strong>S40:</strong> Odoo y 3CX inestables. Ticket Xetechs<br>
+                            <strong>S41:</strong> Bloque de Wassix, monitoreo Odoo<br>
+                            <strong>S42:</strong> Pendiente iniciar monitoreo
+                        </td>
+                    </tr>
+
+                    <!-- FILA 2 -->
+                    <tr class="table-row">
+                        <td class="category-cell">🌐 Conectividad Estable</td>
+                        <td class="meta-cell">Mantener 50 Mbps sin caídas en todas las agencias</td>
+                        <td class="estado-cell">
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-progress="0"></div>
+                                </div>
+                                <span class="progress-text">0%</span>
+                            </div>
+                        </td>
+                        <td class="estado-actual-cell">
+                            <span class="status-badge status-pendiente">A Iniciar</span>
+                        </td>
+                        <td class="observaciones-cell">
+                            <strong>S40:</strong> Petén sin internet, resuelto mismo día<br>
+                            <strong>S41:</strong> Estable, sin tickets<br>
+                            <strong>S42:</strong> Pendiente validación velocidad
+                        </td>
+                    </tr>
+
+                    <!-- FILA 3 -->
+                    <tr class="table-row">
+                        <td class="category-cell">🔧 Mantenimiento Preventivo Cobán</td>
+                        <td class="meta-cell">Completar mantenimiento preventivo en agencia Cobán</td>
+                        <td class="estado-cell">
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-progress="80"></div>
+                                </div>
+                                <span class="progress-text">80%</span>
+                            </div>
+                        </td>
+                        <td class="estado-actual-cell">
+                            <span class="status-badge status-pendiente">Pendiente</span>
+                        </td>
+                        <td class="observaciones-cell">
+                            <strong>S40:</strong> 4 agencias completadas, pendiente Cobán<br>
+                            <strong>S41:</strong> Pendiente aún visita<br>
+                            <strong>S42:</strong> Visita pendiente
+                        </td>
+                    </tr>
+
+                    <!-- FILA 4 -->
+                    <tr class="table-row">
+                        <td class="category-cell">🏢 Mantenimientos Agencia Central</td>
+                        <td class="meta-cell">Completar 8 áreas programadas (1 área por semana)</td>
+                        <td class="estado-cell">
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-progress="25"></div>
+                                </div>
+                                <span class="progress-text">0%</span>
+                            </div>
+                        </td>
+                        <td class="estado-actual-cell">
+                            <span class="status-badge status-proceso">2/8</span>
+                        </td>
+                        <td class="observaciones-cell">
+                            <strong>S40:</strong> N/A<br>
+                            <strong>S41:</strong> Se empezó con créditos y cobros<br>
+                            <strong>S42:</strong> Continuar mantenimientos (2/8)
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Observaciones Generales Q3 -->
+            <div class="observations">
+                <div class="observations-header">
+                    <span class="observations-icon">📋</span>
+                    <div class="observations-title">Observaciones Generales</div>
+                </div>
+                <ul class="observations-list">
+                    <li>Inicio de nueva semana con enfoque en monitoreo continuo de sistemas</li>
+                    <li>Pendiente: Visita técnica a Cobán para completar ciclo de mantenimientos</li>
+                    <li>Mantenimientos Agencia Central: Continuar con ritmo de 1 área por semana</li>
+                    <li>Prioridad: Mantener estabilidad de conectividad y sistemas operativos</li>
                 </ul>
             </div>
         </section>
