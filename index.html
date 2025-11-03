@@ -82,15 +82,15 @@
             width: 100%;
         }
 
-        /* Cuando se muestran 4 semanas - usar scroll horizontal */
+        /* Cuando se muestran 5 semanas - usar scroll horizontal */
         .quarters-container {
-            grid-template-columns: repeat(4, 700px);
+            grid-template-columns: repeat(5, 700px);
             overflow-x: auto;
             padding-bottom: 15px;
             width: 100%;
         }
 
-        /* Cuando se muestran solo 2 semanas (42 y 43) */
+        /* Cuando se muestran solo 2 semanas (43 y 44) */
         .quarters-container:has(.hidden-week) {
             grid-template-columns: 1fr 1fr;
             max-width: 1600px;
@@ -564,7 +564,7 @@
         <div style="text-align: center;">
             <button class="toggle-weeks-btn" onclick="toggleWeeks()">
                 <span id="toggle-icon">👁️</span>
-                <span id="toggle-text">Mostrar Semanas 40 y 41</span>
+                <span id="toggle-text">Mostrar Semanas 40, 41 y 42</span>
             </button>
         </div>
 
@@ -925,7 +925,7 @@
         </section>
 
         <!-- Q3 Section (Semana 42) -->
-        <section class="quarter-section" id="week-42">
+        <section class="quarter-section hidden-week" id="week-42">
             <h2 class="quarter-title"> (Semana 42)</h2>
             
             <table class="indicators-table">
@@ -1066,19 +1066,19 @@
                         <td class="estado-cell">
                             <div class="progress-container">
                                 <div class="progress-bar">
-                                    <div class="progress-fill" data-progress="0"></div>
+                                    <div class="progress-fill" data-progress="90"></div>
                                 </div>
                                 <span class="progress-text">0%</span>
                             </div>
                         </td>
                         <td class="estado-actual-cell">
-                            <span class="status-badge status-pendiente">A Iniciar</span>
+                            <span class="status-badge status-completado">Completado</span>
                         </td>
                         <td class="observaciones-cell">
                             <strong>S40:</strong> Odoo y 3CX inestables. Ticket Xetechs<br>
                             <strong>S41:</strong> Bloque de Wassix, monitoreo Odoo<br>
                             <strong>S42:</strong> Sin reportes de caídas de sistemas<br>
-                            <strong>S43:</strong> Pendiente monitoreo
+                            <strong>S43:</strong> Inconveniente con Odoo (etapas), resto estable
                         </td>
                     </tr>
 
@@ -1089,19 +1089,19 @@
                         <td class="estado-cell">
                             <div class="progress-container">
                                 <div class="progress-bar">
-                                    <div class="progress-fill" data-progress="0"></div>
+                                    <div class="progress-fill" data-progress="100"></div>
                                 </div>
                                 <span class="progress-text">0%</span>
                             </div>
                         </td>
                         <td class="estado-actual-cell">
-                            <span class="status-badge status-pendiente">A Iniciar</span>
+                            <span class="status-badge status-completado">Completado</span>
                         </td>
                         <td class="observaciones-cell">
                             <strong>S40:</strong> Petén sin internet, resuelto mismo día<br>
                             <strong>S41:</strong> Estable, sin tickets<br>
                             <strong>S42:</strong> Sin tickets de inestabilidad. Tests realizados OK<br>
-                            <strong>S43:</strong> Pendiente validación
+                            <strong>S43:</strong> Sin tickets de incidencias, todo OK
                         </td>
                     </tr>
 
@@ -1124,7 +1124,7 @@
                             <strong>S40:</strong> 4 agencias completadas, pendiente Cobán<br>
                             <strong>S41:</strong> Pendiente aún visita<br>
                             <strong>S42:</strong> Se mantiene pendiente<br>
-                            <strong>S43:</strong> Coordinar visita técnica
+                            <strong>S43:</strong> Continúa pendiente
                         </td>
                     </tr>
 
@@ -1135,19 +1135,19 @@
                         <td class="estado-cell">
                             <div class="progress-container">
                                 <div class="progress-bar">
-                                    <div class="progress-fill" data-progress="25"></div>
+                                    <div class="progress-fill" data-progress="50"></div>
                                 </div>
                                 <span class="progress-text">0%</span>
                             </div>
                         </td>
                         <td class="estado-actual-cell">
-                            <span class="status-badge status-proceso">2/8</span>
+                            <span class="status-badge status-proceso">4/8</span>
                         </td>
                         <td class="observaciones-cell">
                             <strong>S40:</strong> N/A<br>
                             <strong>S41:</strong> Se empezó con créditos y cobros<br>
                             <strong>S42:</strong> Se mantiene en 2/8<br>
-                            <strong>S43:</strong> Programar área 3/8
+                            <strong>S43:</strong> Completado Créditos y RRHH (4/8)
                         </td>
                     </tr>
                 </tbody>
@@ -1160,10 +1160,162 @@
                     <div class="observations-title">Observaciones Generales</div>
                 </div>
                 <ul class="observations-list">
-                    <li>Nueva semana iniciando con buenos resultados de S42 como base</li>
-                    <li>Prioridad: Mantener estabilidad alcanzada en sistemas y conectividad</li>
-                    <li>Acción urgente: Coordinar y ejecutar visita técnica a Cobán</li>
-                    <li>Mantenimientos Agencia Central: Programar tercera área para continuar avance</li>
+                    <li>Funcionamiento de sistemas: Buen desempeño general, solo inconveniente menor con etapas de Odoo</li>
+                    <li>Conectividad excelente: Semana sin incidencias ni tickets de soporte</li>
+                    <li>Progreso significativo en Mantenimientos Agencia Central: 50% completado (4/8 áreas)</li>
+                    <li>Pendiente : Visita técnica a Cobán</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Q5 Section (Semana 44) -->
+        <section class="quarter-section" id="week-44">
+            <h2 class="quarter-title"> (Semana 44)</h2>
+            
+            <table class="indicators-table">
+                <thead class="table-header">
+                    <tr>
+                        <th>📋 CATEGORÍA / INDICADOR</th>
+                        <th>🎯 META Q5</th>
+                        <th>📊 ESTADO Q5 (%)</th>
+                        <th>✅ ESTADO ACTUAL</th>
+                        <th>📝 OBSERVACIONES (S40 | S41 | S42 | S43 | S44)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- FILA 1 -->
+                    <tr class="table-row">
+                        <td class="category-cell">💻 Funcionamiento de Sistemas</td>
+                        <td class="meta-cell">100% Operativo - Sistemas estables sin errores ni inestabilidad</td>
+                        <td class="estado-cell">
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-progress="0"></div>
+                                </div>
+                                <span class="progress-text">0%</span>
+                            </div>
+                        </td>
+                        <td class="estado-actual-cell">
+                            <span class="status-badge status-pendiente">A Iniciar</span>
+                        </td>
+                        <td class="observaciones-cell">
+                            <strong>S40:</strong> Odoo y 3CX inestables. Ticket Xetechs<br>
+                            <strong>S41:</strong> Bloque de Wassix, monitoreo Odoo<br>
+                            <strong>S42:</strong> Sin reportes de caídas de sistemas<br>
+                            <strong>S43:</strong> Inconveniente con Odoo (etapas), resto estable<br>
+                            <strong>S44:</strong> Iniciando
+                        </td>
+                    </tr>
+
+                    <!-- FILA 2 -->
+                    <tr class="table-row">
+                        <td class="category-cell">🌐 Conectividad Estable</td>
+                        <td class="meta-cell">Mantener 50 Mbps sin caídas en todas las agencias</td>
+                        <td class="estado-cell">
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-progress="0"></div>
+                                </div>
+                                <span class="progress-text">0%</span>
+                            </div>
+                        </td>
+                        <td class="estado-actual-cell">
+                            <span class="status-badge status-pendiente">A Iniciar</span>
+                        </td>
+                        <td class="observaciones-cell">
+                            <strong>S40:</strong> Petén sin internet, resuelto mismo día<br>
+                            <strong>S41:</strong> Estable, sin tickets<br>
+                            <strong>S42:</strong> Sin tickets de inestabilidad. Tests realizados OK<br>
+                            <strong>S43:</strong> Sin tickets de incidencias, todo OK<br>
+                            <strong>S44:</strong> A validar durante la semana
+                        </td>
+                    </tr>
+
+                    <!-- FILA 3 -->
+                    <tr class="table-row">
+                        <td class="category-cell">🔧 Mantenimiento Preventivo Cobán</td>
+                        <td class="meta-cell">Completar mantenimiento preventivo en agencia Cobán</td>
+                        <td class="estado-cell">
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-progress="80"></div>
+                                </div>
+                                <span class="progress-text">80%</span>
+                            </div>
+                        </td>
+                        <td class="estado-actual-cell">
+                            <span class="status-badge status-pendiente">Pendiente</span>
+                        </td>
+                        <td class="observaciones-cell">
+                            <strong>S40:</strong> 4 agencias completadas, pendiente Cobán<br>
+                            <strong>S41:</strong> Pendiente aún visita<br>
+                            <strong>S42:</strong> Se mantiene pendiente<br>
+                            <strong>S43:</strong> Continúa pendiente<br>
+                            <strong>S44:</strong> Se tiene programado ir miercoles 5/11/2025
+                        </td>
+                    </tr>
+
+                    <!-- FILA 4 -->
+                    <tr class="table-row">
+                        <td class="category-cell">🏢 Mantenimientos Agencia Central</td>
+                        <td class="meta-cell">Completar 8 áreas programadas (1 área por semana)</td>
+                        <td class="estado-cell">
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-progress="50"></div>
+                                </div>
+                                <span class="progress-text">0%</span>
+                            </div>
+                        </td>
+                        <td class="estado-actual-cell">
+                            <span class="status-badge status-proceso">4/8</span>
+                        </td>
+                        <td class="observaciones-cell">
+                            <strong>S40:</strong> N/A<br>
+                            <strong>S41:</strong> Se empezó con créditos y cobros<br>
+                            <strong>S42:</strong> Se mantiene en 2/8<br>
+                            <strong>S43:</strong> Completado Créditos y RRHH (4/8)<br>
+                            <strong>S44:</strong>  área (QA y Auditoria) 6/8 esta semana
+                        </td>
+                    </tr>
+
+                    <!-- FILA 5 -->
+                    <tr class="table-row">
+                        <td class="category-cell">💰 Wassix Cobros y Boletas</td>
+                        <td class="meta-cell">Conectar Wassix de cobros y boletas</td>
+                        <td class="estado-cell">
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-progress="100"></div>
+                                </div>
+                                <span class="progress-text">0%</span>
+                            </div>
+                        </td>
+                        <td class="estado-actual-cell">
+                            <span class="status-badge status-completado">Completado</span>
+                        </td>
+                        <td class="observaciones-cell">
+                            <strong>S40:</strong> N/A<br>
+                            <strong>S41:</strong> N/A<br>
+                            <strong>S42:</strong> N/A<br>
+                            <strong>S43:</strong> N/A<br>
+                            <strong>S44:</strong> Cobros y boletas ya conectados exitosamente
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Observaciones Generales Q5 -->
+            <div class="observations">
+                <div class="observations-header">
+                    <span class="observations-icon">📋</span>
+                    <div class="observations-title">Observaciones Generales</div>
+                </div>
+                <ul class="observations-list">
+                    <li>Nueva semana iniciando con excelentes resultados de S43 como base</li>
+                    <li>Meta S44: Mantener estabilidad de sistemas y conectividad lograda en S43</li>
+                    <li>Prioridad: Ejecutar finalmente la visita técnica a Cobán</li>
+                    <li>Objetivo S44: Avanzar a 6/8 áreas en Mantenimientos Agencia Central</li>
                 </ul>
             </div>
         </section>
@@ -1182,6 +1334,7 @@
         function toggleWeeks() {
             const week40 = document.getElementById('week-40');
             const week41 = document.getElementById('week-41');
+            const week42 = document.getElementById('week-42');
             const toggleText = document.getElementById('toggle-text');
             const toggleIcon = document.getElementById('toggle-icon');
             
@@ -1190,12 +1343,14 @@
             if (isHidden) {
                 week40.classList.remove('hidden-week');
                 week41.classList.remove('hidden-week');
-                toggleText.textContent = 'Ocultar Semanas 40 y 41';
+                week42.classList.remove('hidden-week');
+                toggleText.textContent = 'Ocultar Semanas 40, 41 y 42';
                 toggleIcon.textContent = '🙈';
             } else {
                 week40.classList.add('hidden-week');
                 week41.classList.add('hidden-week');
-                toggleText.textContent = 'Mostrar Semanas 40 y 41';
+                week42.classList.add('hidden-week');
+                toggleText.textContent = 'Mostrar Semanas 40, 41 y 42';
                 toggleIcon.textContent = '👁️';
             }
         }
