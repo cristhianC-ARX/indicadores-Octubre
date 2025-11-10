@@ -101,7 +101,7 @@
         }
 
         /* Cuando solo se muestra una semana (solo week-45 visible) */
-        .quarters-container:has(#week-40.hidden-week):has(#week-41.hidden-week):has(#week-42.hidden-week):has(#week-43.hidden-week) {
+        .quarters-container:has(#week-40.hidden-week):has(#week-41.hidden-week):has(#week-42.hidden-week):has(#week-43.hidden-week):has(#week-44.hidden-week) {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -179,7 +179,7 @@
         }
 
         /* Quarter Section cuando está centrada (solo una semana visible) */
-        .quarters-container:has(#week-40.hidden-week):has(#week-41.hidden-week):has(#week-42.hidden-week):has(#week-43.hidden-week) .quarter-section {
+        .quarters-container:has(#week-40.hidden-week):has(#week-41.hidden-week):has(#week-42.hidden-week):has(#week-43.hidden-week):has(#week-44.hidden-week) .quarter-section {
             max-width: 850px;
             width: 100%;
         }
@@ -581,7 +581,7 @@
         <div style="text-align: center;">
             <button class="toggle-weeks-btn" onclick="toggleWeeks()">
                 <span id="toggle-icon">👁️</span>
-                <span id="toggle-text">Mostrar Semanas 40, 41 y 42</span>
+                <span id="toggle-text">Mostrar Semanas 40, 41, 42, 43 y 44</span>
             </button>
         </div>
 
@@ -1185,7 +1185,139 @@
             </div>
         </section>
 
-        <!-- Q5 Section (Semana 45) -->
+        <!-- Q5 Section (Semana 44) -->
+        <section class="quarter-section hidden-week" id="week-44">
+            <h2 class="quarter-title"> (Semana 44)</h2>
+            
+            <table class="indicators-table">
+                <thead class="table-header">
+                    <tr>
+                        <th>📋 CATEGORÍA / INDICADOR</th>
+                        <th>🎯 META Q5</th>
+                        <th>📊 ESTADO Q5 (%)</th>
+                        <th>✅ ESTADO ACTUAL</th>
+                        <th>📝 OBSERVACIONES (S40 | S41 | S42 | S43 | S44)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- FILA 1 -->
+                    <tr class="table-row">
+                        <td class="category-cell">💻 Funcionamiento de Sistemas</td>
+                        <td class="meta-cell">100% Operativo - Sistemas estables sin errores ni inestabilidad</td>
+                        <td class="estado-cell">
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-progress="90"></div>
+                                </div>
+                                <span class="progress-text">90%</span>
+                            </div>
+                        </td>
+                        <td class="estado-actual-cell">
+                            <span class="status-badge status-proceso">En Progreso</span>
+                        </td>
+                        <td class="observaciones-cell">
+                            <strong>S44:</strong> Mantenimiento programado exitoso, sistemas estables
+                        </td>
+                    </tr>
+
+                    <!-- FILA 2 -->
+                    <tr class="table-row">
+                        <td class="category-cell">🌐 Conectividad Estable</td>
+                        <td class="meta-cell">Mantener 50 Mbps sin caídas en todas las agencias</td>
+                        <td class="estado-cell">
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-progress="95"></div>
+                                </div>
+                                <span class="progress-text">95%</span>
+                            </div>
+                        </td>
+                        <td class="estado-actual-cell">
+                            <span class="status-badge status-completado">Excelente</span>
+                        </td>
+                        <td class="observaciones-cell">
+                            <strong>S44:</strong> Validado como estable, sin incidencias reportadas
+                        </td>
+                    </tr>
+
+                    <!-- FILA 3 -->
+                    <tr class="table-row">
+                        <td class="category-cell">🔧 Mantenimiento Preventivo Cobán</td>
+                        <td class="meta-cell">Completar mantenimiento preventivo en agencia Cobán</td>
+                        <td class="estado-cell">
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-progress="90"></div>
+                                </div>
+                                <span class="progress-text">90%</span>
+                            </div>
+                        </td>
+                        <td class="estado-actual-cell">
+                            <span class="status-badge status-proceso">Programado</span>
+                        </td>
+                        <td class="observaciones-cell">
+                            <strong>S44:</strong> Programado para miércoles 6/11/2025
+                        </td>
+                    </tr>
+
+                    <!-- FILA 4 -->
+                    <tr class="table-row">
+                        <td class="category-cell">🏢 Mantenimientos Agencia Central</td>
+                        <td class="meta-cell">Completar 8 áreas programadas (1 área por semana)</td>
+                        <td class="estado-cell">
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-progress="62"></div>
+                                </div>
+                                <span class="progress-text">62%</span>
+                            </div>
+                        </td>
+                        <td class="estado-actual-cell">
+                            <span class="status-badge status-proceso">5/8</span>
+                        </td>
+                        <td class="observaciones-cell">
+                            <strong>S44:</strong> Programado área QA y Auditoria (5/8)
+                        </td>
+                    </tr>
+
+                    <!-- FILA 5 -->
+                    <tr class="table-row">
+                        <td class="category-cell">💰 Wassix Cobros y Boletas</td>
+                        <td class="meta-cell">Conectar Wassix de cobros y boletas</td>
+                        <td class="estado-cell">
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-progress="100"></div>
+                                </div>
+                                <span class="progress-text">100%</span>
+                            </div>
+                        </td>
+                        <td class="estado-actual-cell">
+                            <span class="status-badge status-completado">Completado</span>
+                        </td>
+                        <td class="observaciones-cell">
+                            <strong>S44:</strong> Cobros y boletas conectados exitosamente
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Observaciones Generales S44 -->
+            <div class="observations">
+                <div class="observations-header">
+                    <span class="observations-icon">📋</span>
+                    <div class="observations-title">Observaciones Generales</div>
+                </div>
+                <ul class="observations-list">
+                    <li>Semana de preparación para finalizar objetivos pendientes</li>
+                    <li>Mantenimiento preventivo Cobán programado y confirmado</li>
+                    <li>Sistemas y conectividad mantienen excelente performance</li>
+                    <li>Avance planificado hacia 6/8 áreas en Mantenimientos Agencia Central</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Q6 Section (Semana 45) -->
         <section class="quarter-section" id="week-45">
             <h2 class="quarter-title"> (Semana 45)</h2>
             
@@ -1378,6 +1510,8 @@
             const week40 = document.getElementById('week-40');
             const week41 = document.getElementById('week-41');
             const week42 = document.getElementById('week-42');
+            const week43 = document.getElementById('week-43');
+            const week44 = document.getElementById('week-44');
             const toggleText = document.getElementById('toggle-text');
             const toggleIcon = document.getElementById('toggle-icon');
             
@@ -1387,13 +1521,17 @@
                 week40.classList.remove('hidden-week');
                 week41.classList.remove('hidden-week');
                 week42.classList.remove('hidden-week');
-                toggleText.textContent = 'Ocultar Semanas 40, 41 y 42';
+                week43.classList.remove('hidden-week');
+                week44.classList.remove('hidden-week');
+                toggleText.textContent = 'Ocultar Semanas 40, 41, 42, 43 y 44';
                 toggleIcon.textContent = '🙈';
             } else {
                 week40.classList.add('hidden-week');
                 week41.classList.add('hidden-week');
                 week42.classList.add('hidden-week');
-                toggleText.textContent = 'Mostrar Semanas 40, 41 y 42';
+                week43.classList.add('hidden-week');
+                week44.classList.add('hidden-week');
+                toggleText.textContent = 'Mostrar Semanas 40, 41, 42, 43 y 44';
                 toggleIcon.textContent = '👁️';
             }
         }
