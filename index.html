@@ -100,6 +100,17 @@
             padding-bottom: 0;
         }
 
+        /* Cuando solo se muestra una semana (solo week-45 visible) */
+        .quarters-container:has(#week-40.hidden-week):has(#week-41.hidden-week):has(#week-42.hidden-week):has(#week-43.hidden-week) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            grid-template-columns: none;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
         /* Scrollbar styling para cuando se muestran las 4 semanas */
         .quarters-container::-webkit-scrollbar {
             height: 12px;
@@ -164,6 +175,12 @@
             box-shadow: var(--card-shadow);
             animation: fadeInUp 0.8s ease;
             min-width: 0; /* Permite que el contenido se contraiga correctamente */
+            width: 100%;
+        }
+
+        /* Quarter Section cuando está centrada (solo una semana visible) */
+        .quarters-container:has(#week-40.hidden-week):has(#week-41.hidden-week):has(#week-42.hidden-week):has(#week-43.hidden-week) .quarter-section {
+            max-width: 850px;
             width: 100%;
         }
 
@@ -1045,7 +1062,7 @@
         </section>
 
         <!-- Q4 Section (Semana 43) -->
-        <section class="quarter-section" id="week-43">
+        <section class="quarter-section hidden-week" id="week-43">
             <h2 class="quarter-title"> (Semana 43)</h2>
             
             <table class="indicators-table">
@@ -1168,9 +1185,9 @@
             </div>
         </section>
 
-        <!-- Q5 Section (Semana 44) -->
-        <section class="quarter-section" id="week-44">
-            <h2 class="quarter-title"> (Semana 44)</h2>
+        <!-- Q5 Section (Semana 45) -->
+        <section class="quarter-section" id="week-45">
+            <h2 class="quarter-title"> (Semana 45)</h2>
             
             <table class="indicators-table">
                 <thead class="table-header">
@@ -1179,7 +1196,7 @@
                         <th>🎯 META Q5</th>
                         <th>📊 ESTADO Q5 (%)</th>
                         <th>✅ ESTADO ACTUAL</th>
-                        <th>📝 OBSERVACIONES (S40 | S41 | S42 | S43 | S44)</th>
+                        <th>📝 OBSERVACIONES (S40 | S41 | S42 | S43 | S44 | S45)</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -1190,20 +1207,21 @@
                         <td class="estado-cell">
                             <div class="progress-container">
                                 <div class="progress-bar">
-                                    <div class="progress-fill" data-progress="0"></div>
+                                    <div class="progress-fill" data-progress="100"></div>
                                 </div>
-                                <span class="progress-text">0%</span>
+                                <span class="progress-text">100%</span>
                             </div>
                         </td>
                         <td class="estado-actual-cell">
-                            <span class="status-badge status-pendiente">A Iniciar</span>
+                            <span class="status-badge status-completado">Completado</span>
                         </td>
                         <td class="observaciones-cell">
                             <strong>S40:</strong> Odoo y 3CX inestables. Ticket Xetechs<br>
                             <strong>S41:</strong> Bloque de Wassix, monitoreo Odoo<br>
                             <strong>S42:</strong> Sin reportes de caídas de sistemas<br>
                             <strong>S43:</strong> Inconveniente con Odoo (etapas), resto estable<br>
-                            <strong>S44:</strong> Iniciando
+                            <strong>S44:</strong> Mantenimiento programado exitoso<br>
+                            <strong>S45:</strong> Sin reporte de caída de sistemas
                         </td>
                     </tr>
 
@@ -1214,20 +1232,21 @@
                         <td class="estado-cell">
                             <div class="progress-container">
                                 <div class="progress-bar">
-                                    <div class="progress-fill" data-progress="0"></div>
+                                    <div class="progress-fill" data-progress="100"></div>
                                 </div>
-                                <span class="progress-text">0%</span>
+                                <span class="progress-text">100%</span>
                             </div>
                         </td>
                         <td class="estado-actual-cell">
-                            <span class="status-badge status-pendiente">A Iniciar</span>
+                            <span class="status-badge status-completado">Completado</span>
                         </td>
                         <td class="observaciones-cell">
                             <strong>S40:</strong> Petén sin internet, resuelto mismo día<br>
                             <strong>S41:</strong> Estable, sin tickets<br>
                             <strong>S42:</strong> Sin tickets de inestabilidad. Tests realizados OK<br>
                             <strong>S43:</strong> Sin tickets de incidencias, todo OK<br>
-                            <strong>S44:</strong> A validar durante la semana
+                            <strong>S44:</strong> Validado como estable<br>
+                            <strong>S45:</strong> Estable central y agencias, sin reportes de incidencias todo ok
                         </td>
                     </tr>
 
@@ -1238,20 +1257,21 @@
                         <td class="estado-cell">
                             <div class="progress-container">
                                 <div class="progress-bar">
-                                    <div class="progress-fill" data-progress="80"></div>
+                                    <div class="progress-fill" data-progress="100"></div>
                                 </div>
-                                <span class="progress-text">80%</span>
+                                <span class="progress-text">100%</span>
                             </div>
                         </td>
                         <td class="estado-actual-cell">
-                            <span class="status-badge status-pendiente">Pendiente</span>
+                            <span class="status-badge status-completado">Completado</span>
                         </td>
                         <td class="observaciones-cell">
                             <strong>S40:</strong> 4 agencias completadas, pendiente Cobán<br>
                             <strong>S41:</strong> Pendiente aún visita<br>
                             <strong>S42:</strong> Se mantiene pendiente<br>
                             <strong>S43:</strong> Continúa pendiente<br>
-                            <strong>S44:</strong> Se tiene programado ir miercoles 5/11/2025
+                            <strong>S44:</strong> Se tiene programado ir miercoles 5/11/2025<br>
+                            <strong>S45:</strong> Completado. Informe compartido
                         </td>
                     </tr>
 
@@ -1262,20 +1282,21 @@
                         <td class="estado-cell">
                             <div class="progress-container">
                                 <div class="progress-bar">
-                                    <div class="progress-fill" data-progress="50"></div>
+                                    <div class="progress-fill" data-progress="75"></div>
                                 </div>
-                                <span class="progress-text">0%</span>
+                                <span class="progress-text">75%</span>
                             </div>
                         </td>
                         <td class="estado-actual-cell">
-                            <span class="status-badge status-proceso">4/8</span>
+                            <span class="status-badge status-proceso">6/8</span>
                         </td>
                         <td class="observaciones-cell">
                             <strong>S40:</strong> N/A<br>
                             <strong>S41:</strong> Se empezó con créditos y cobros<br>
                             <strong>S42:</strong> Se mantiene en 2/8<br>
                             <strong>S43:</strong> Completado Créditos y RRHH (4/8)<br>
-                            <strong>S44:</strong>  área (QA y Auditoria) 6/8 esta semana
+                            <strong>S44:</strong> Programado área (QA y Auditoria) 6/8 esta semana<br>
+                            <strong>S45:</strong> Área QA y auditoria completado (6/8)
                         </td>
                     </tr>
 
@@ -1299,7 +1320,28 @@
                             <strong>S41:</strong> N/A<br>
                             <strong>S42:</strong> N/A<br>
                             <strong>S43:</strong> N/A<br>
-                            <strong>S44:</strong> Cobros y boletas ya conectados exitosamente
+                            <strong>S44:</strong> Cobros y boletas ya conectados exitosamente<br>
+                            <strong>S45:</strong> Mantiene funcionamiento estable
+                        </td>
+                    </tr>
+
+                    <!-- FILA 6 -->
+                    <tr class="table-row">
+                        <td class="category-cell">🎫 Tickets IT</td>
+                        <td class="meta-cell">Gestión eficiente de tickets de soporte técnico</td>
+                        <td class="estado-cell">
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-progress="62"></div>
+                                </div>
+                                <span class="progress-text">62%</span>
+                            </div>
+                        </td>
+                        <td class="estado-actual-cell">
+                            <span class="status-badge status-proceso">18/29</span>
+                        </td>
+                        <td class="observaciones-cell">
+                            <strong>S45:</strong> Total 29 tickets: 8 en espera, 2 en ejecución, 1 cancelado, 18 finalizados
                         </td>
                     </tr>
                 </tbody>
@@ -1312,10 +1354,11 @@
                     <div class="observations-title">Observaciones Generales</div>
                 </div>
                 <ul class="observations-list">
-                    <li>Nueva semana iniciando con excelentes resultados de S43 como base</li>
-                    <li>Meta S44: Mantener estabilidad de sistemas y conectividad lograda en S43</li>
-                    <li>Prioridad: Ejecutar finalmente la visita técnica a Cobán</li>
-                    <li>Objetivo S44: Avanzar a 6/8 áreas en Mantenimientos Agencia Central</li>
+                    <li>Excelente semana con múltiples objetivos completados exitosamente</li>
+                    <li>Mantenimiento Preventivo Cobán finalizado con informe compartido</li>
+                    <li>Sistemas y conectividad mantienen estabilidad óptima sin incidencias</li>
+                    <li>Avance significativo en Mantenimientos Agencia Central: 6/8 áreas completadas</li>
+                    <li>Gestión eficiente de tickets IT con 62% de resolución (18/29 tickets finalizados)</li>
                 </ul>
             </div>
         </section>
