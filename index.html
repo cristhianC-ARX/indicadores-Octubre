@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Indicadores Octubre 2025</title>
+    <title>Indicadores  2025</title>
     <style>
         :root {
             /* Page vivid background + neutral cards */
@@ -82,9 +82,9 @@
             width: 100%;
         }
 
-        /* Cuando se muestran 5 semanas - usar scroll horizontal */
+        /* Cuando se muestran 6 semanas - usar scroll horizontal */
         .quarters-container {
-            grid-template-columns: repeat(5, 700px);
+            grid-template-columns: repeat(6, 700px);
             overflow-x: auto;
             padding-bottom: 15px;
             width: 100%;
@@ -100,8 +100,8 @@
             padding-bottom: 0;
         }
 
-        /* Cuando solo se muestra una semana (solo week-45 visible) */
-        .quarters-container:has(#week-40.hidden-week):has(#week-41.hidden-week):has(#week-42.hidden-week):has(#week-43.hidden-week):has(#week-44.hidden-week) {
+        /* Cuando solo se muestra una semana (solo week-46 visible) */
+        .quarters-container:has(#week-40.hidden-week):has(#week-41.hidden-week):has(#week-42.hidden-week):has(#week-43.hidden-week):has(#week-44.hidden-week):has(#week-45.hidden-week) {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -179,7 +179,7 @@
         }
 
         /* Quarter Section cuando está centrada (solo una semana visible) */
-        .quarters-container:has(#week-40.hidden-week):has(#week-41.hidden-week):has(#week-42.hidden-week):has(#week-43.hidden-week):has(#week-44.hidden-week) .quarter-section {
+        .quarters-container:has(#week-40.hidden-week):has(#week-41.hidden-week):has(#week-42.hidden-week):has(#week-43.hidden-week):has(#week-44.hidden-week):has(#week-45.hidden-week) .quarter-section {
             max-width: 850px;
             width: 100%;
         }
@@ -542,6 +542,177 @@
             to { opacity: 1; }
         }
 
+        /* Ticket Modal Styles */
+        .ticket-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.75);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .ticket-modal-content {
+            background: white;
+            border-radius: 20px;
+            max-width: 1400px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: slideUp 0.4s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .ticket-modal-header {
+            background: linear-gradient(135deg, #60a5fa 0%, #0078D4 100%);
+            color: white;
+            padding: 25px 30px;
+            border-radius: 20px 20px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .ticket-modal-header h3 {
+            margin: 0;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .close-modal {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .close-modal:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(90deg);
+        }
+
+        .ticket-modal-body {
+            padding: 30px;
+        }
+
+        .ticket-section {
+            margin-bottom: 35px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .ticket-section-header {
+            padding: 20px 25px;
+            color: white;
+            font-size: 1.3rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .ticket-section-header.waiting {
+            background: linear-gradient(135deg, #f59e0b 0%, #f97316 100%);
+        }
+
+        .ticket-section-header.progress {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+        }
+
+        .ticket-section-header.completed {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        }
+
+        .ticket-count {
+            background: rgba(255, 255, 255, 0.3);
+            padding: 8px 16px;
+            border-radius: 10px;
+            font-size: 1.5rem;
+            font-weight: 800;
+            min-width: 50px;
+            text-align: center;
+        }
+
+        .ticket-table-wrapper {
+            overflow-x: auto;
+            background: white;
+        }
+
+        .ticket-detail-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .ticket-detail-table thead {
+            background: #f8fafc;
+        }
+
+        .ticket-detail-table th {
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            color: #475569;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .ticket-detail-table td {
+            padding: 15px;
+            border-bottom: 1px solid #e2e8f0;
+            color: #334155;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .ticket-detail-table tbody tr:hover {
+            background: #f8fafc;
+        }
+
+        .ticket-detail-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .clickable-badge {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .clickable-badge:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
         /* Responsive */
         @media (max-width: 1200px) {
             .indicators-table {
@@ -551,6 +722,10 @@
             .table-header th,
             .table-row td {
                 padding: 12px 10px;
+            }
+
+            .ticket-modal-content {
+                max-width: 95%;
             }
         }
 
@@ -567,6 +742,18 @@
             .indicators-table {
                 min-width: 800px;
             }
+
+            .ticket-modal-header h3 {
+                font-size: 1.3rem;
+            }
+
+            .ticket-modal-body {
+                padding: 20px;
+            }
+
+            .ticket-detail-table {
+                font-size: 0.8rem;
+            }
         }
     </style>
 </head>
@@ -574,14 +761,14 @@
     <div class="container">
         <!-- Header -->
         <header>
-            <h1>📊 Indicadores Octubre 2025</h1>
+            <h1>📊 Indicadores Noviembre 2025</h1>
         </header>
 
         <!-- Toggle Button -->
         <div style="text-align: center;">
             <button class="toggle-weeks-btn" onclick="toggleWeeks()">
                 <span id="toggle-icon">👁️</span>
-                <span id="toggle-text">Mostrar Semanas 40, 41, 42, 43 y 44</span>
+                <span id="toggle-text">Mostrar Semanas 40, 41, 42, 43, 44 y 45</span>
             </button>
         </div>
 
@@ -1317,8 +1504,410 @@
             </div>
         </section>
 
+        <!-- Q5.5 Section (Semana 46) -->
+        <section class="quarter-section" id="week-46">
+            <h2 class="quarter-title"> (Semana 46 - 10 al 16 Noviembre)</h2>
+            
+            <table class="indicators-table">
+                <thead class="table-header">
+                    <tr>
+                        <th>📋 CATEGORÍA / INDICADOR</th>
+                        <th>🎯 META</th>
+                        <th>📊 ESTADO (%)</th>
+                        <th>✅ ESTADO ACTUAL</th>
+                        <th>📝 OBSERVACIONES</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- FILA 1 -->
+                    <tr class="table-row">
+                        <td class="category-cell">💻 Funcionamiento de Sistemas</td>
+                        <td class="meta-cell">100% Operativo - Sistemas estables sin errores ni inestabilidad</td>
+                        <td class="estado-cell">
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-progress="100"></div>
+                                </div>
+                                <span class="progress-text">100%</span>
+                            </div>
+                        </td>
+                        <td class="estado-actual-cell">
+                            <span class="status-badge status-completado">Completado</span>
+                        </td>
+                        <td class="observaciones-cell">
+                            Sin reporte de caída de sistemas
+                        </td>
+                    </tr>
+
+                    <!-- FILA 2 -->
+                    <tr class="table-row">
+                        <td class="category-cell">🌐 Conectividad Estable</td>
+                        <td class="meta-cell">Mantener 50 Mbps sin caídas en todas las agencias</td>
+                        <td class="estado-cell">
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-progress="100"></div>
+                                </div>
+                                <span class="progress-text">100%</span>
+                            </div>
+                        </td>
+                        <td class="estado-actual-cell">
+                            <span class="status-badge status-completado">Completado</span>
+                        </td>
+                        <td class="observaciones-cell">
+                            Estable central y agencias, sin reportes de incidencias
+                        </td>
+                    </tr>
+
+                    <!-- FILA 3 -->
+                    <tr class="table-row">
+                        <td class="category-cell">🔧 Mantenimiento Preventivo Cobán</td>
+                        <td class="meta-cell">Completar mantenimiento preventivo en agencia Cobán</td>
+                        <td class="estado-cell">
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-progress="100"></div>
+                                </div>
+                                <span class="progress-text">100%</span>
+                            </div>
+                        </td>
+                        <td class="estado-actual-cell">
+                            <span class="status-badge status-completado">Completado</span>
+                        </td>
+                        <td class="observaciones-cell">
+                            Completado. Informe compartido
+                        </td>
+                    </tr>
+
+                    <!-- FILA 4 -->
+                    <tr class="table-row">
+                        <td class="category-cell">🏢 Mantenimientos Agencia Central</td>
+                        <td class="meta-cell">Completar 8 áreas programadas (1 área por semana)</td>
+                        <td class="estado-cell">
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-progress="75"></div>
+                                </div>
+                                <span class="progress-text">75%</span>
+                            </div>
+                        </td>
+                        <td class="estado-actual-cell">
+                            <span class="status-badge status-proceso">6/8</span>
+                        </td>
+                        <td class="observaciones-cell">
+                            Área QA y auditoria completado (6/8)
+                        </td>
+                    </tr>
+
+                    <!-- FILA 5 -->
+                    <tr class="table-row">
+                        <td class="category-cell">💰 Wassix Cobros y Boletas</td>
+                        <td class="meta-cell">Conectar Wassix de cobros y boletas</td>
+                        <td class="estado-cell">
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-progress="100"></div>
+                                </div>
+                                <span class="progress-text">100%</span>
+                            </div>
+                        </td>
+                        <td class="estado-actual-cell">
+                            <span class="status-badge status-completado">Completado</span>
+                        </td>
+                        <td class="observaciones-cell">
+                            Mantiene funcionamiento estable
+                        </td>
+                    </tr>
+
+                    <!-- FILA 6 -->
+                    <tr class="table-row">
+                        <td class="category-cell">🎫 Tickets IT</td>
+                        <td class="meta-cell">Gestión eficiente de tickets de soporte técnico</td>
+                        <td class="estado-cell">
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-progress="63"></div>
+                                </div>
+                                <span class="progress-text">63%</span>
+                            </div>
+                        </td>
+                        <td class="estado-actual-cell">
+                            <span class="status-badge status-proceso clickable-badge" onclick="toggleTicketDetails()">15/24 📊</span>
+                        </td>
+                        <td class="observaciones-cell">
+                            Total 24 tickets: 3 en espera, 6 en ejecución, 15 finalizados<br>
+                            <span style="color: var(--accent-600); font-weight: 600; cursor: pointer;" onclick="toggleTicketDetails()">👉 Click para ver desglose detallado</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Modal/Desglose de Tickets -->
+            <div id="ticketDetailsModal" class="ticket-modal" style="display: none;">
+                <div class="ticket-modal-content">
+                    <div class="ticket-modal-header">
+                        <h3>📊 Desglose de Tickets - Semana 46 (10 al 16 Noviembre)</h3>
+                        <button class="close-modal" onclick="toggleTicketDetails()">✖</button>
+                    </div>
+                    <div class="ticket-modal-body">
+                        <!-- En Espera -->
+                        <div class="ticket-section">
+                            <div class="ticket-section-header waiting">
+                                <span class="ticket-count">3</span>
+                                <span class="ticket-title">⏳ EN ESPERA</span>
+                            </div>
+                            <div class="ticket-table-wrapper">
+                                <table class="ticket-detail-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Asignada a</th>
+                                            <th>Asunto</th>
+                                            <th>Cliente</th>
+                                            <th>Departamento</th>
+                                            <th>Creado el</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Pablo Alvarez</td>
+                                            <td>ERROR EN ODOO CASO JUAN RAMON LEM SURAM</td>
+                                            <td>Lidia Paná</td>
+                                            <td>COMERCIAL</td>
+                                            <td>2025-11-16 12:40:26</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Cristhian Aguilar</td>
+                                            <td>CINDY PAOLA GARCIA JUAREZ</td>
+                                            <td>Dulce Aquino</td>
+                                            <td>RRHH</td>
+                                            <td>2025-11-14 11:51:05</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Cristhian Aguilar</td>
+                                            <td>PROYECTO LEGAL</td>
+                                            <td>Pedro Molina</td>
+                                            <td>LEGAL</td>
+                                            <td>2025-11-10 08:25:24</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- En Ejecución -->
+                        <div class="ticket-section">
+                            <div class="ticket-section-header progress">
+                                <span class="ticket-count">6</span>
+                                <span class="ticket-title">⚙️ EN EJECUCIÓN</span>
+                            </div>
+                            <div class="ticket-table-wrapper">
+                                <table class="ticket-detail-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Asignada a</th>
+                                            <th>Asunto</th>
+                                            <th>Cliente</th>
+                                            <th>Departamento</th>
+                                            <th>Creado el</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Cristhian Aguilar</td>
+                                            <td>Solicitud de grabación de desembolso</td>
+                                            <td>Erick Javier Zacarias Muralles</td>
+                                            <td>QA</td>
+                                            <td>2025-11-14 09:23:33</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Cristhian Aguilar</td>
+                                            <td>Problema Descarga de video y audios en odoo en prospectos de hipotecas</td>
+                                            <td>Lorena Godinez</td>
+                                            <td>COMERCIAL</td>
+                                            <td>2025-11-14 08:11:59</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Cristhian Aguilar</td>
+                                            <td>Visualizacion detalle de visitas, consultas, dictamen, comite, negociacion, reconsideracion, desembolso.</td>
+                                            <td>Lorena Godinez</td>
+                                            <td>COMERCIAL</td>
+                                            <td>2025-11-12 08:04:56</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Pablo Alvarez</td>
+                                            <td>Angel Rene Ochoa Dominguez</td>
+                                            <td>Dulce Aquino</td>
+                                            <td>RRHH</td>
+                                            <td>2025-11-11 15:59:41</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Pablo Alvarez</td>
+                                            <td>Nicolás Chuc García</td>
+                                            <td>Dulce Aquino</td>
+                                            <td>RRHH</td>
+                                            <td>2025-11-11 15:55:54</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Pablo Alvarez</td>
+                                            <td>Cristhian Chen</td>
+                                            <td>Dulce Aquino</td>
+                                            <td>RRHH</td>
+                                            <td>2025-11-10 16:25:33</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Finalizados -->
+                        <div class="ticket-section">
+                            <div class="ticket-section-header completed">
+                                <span class="ticket-count">15</span>
+                                <span class="ticket-title">✅ FINALIZADOS</span>
+                            </div>
+                            <div class="ticket-table-wrapper">
+                                <table class="ticket-detail-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Asignada a</th>
+                                            <th>Asunto</th>
+                                            <th>Cliente</th>
+                                            <th>Departamento</th>
+                                            <th>Creado el</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Cristhian Aguilar</td>
+                                            <td>ERROR EN ODOO NO SE PUEDE ACCEDER AL CASO DE JUAN RAMON LEM SURAM</td>
+                                            <td>Lidia Paná</td>
+                                            <td>COMERCIAL</td>
+                                            <td>2025-11-14 09:03:33</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Cristhian Aguilar</td>
+                                            <td>Reactivar asignacion de Miguel y Gabriel el lunes 17</td>
+                                            <td>Lorena Godinez</td>
+                                            <td>COMERCIAL</td>
+                                            <td>2025-11-14 08:18:05</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Cristhian Aguilar</td>
+                                            <td>Solicitud de acceso a mis casos</td>
+                                            <td>Miguel Pú</td>
+                                            <td>COMERCIAL</td>
+                                            <td>2025-11-13 09:43:06</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Pablo Alvarez</td>
+                                            <td>REVISAR IMPRESORA POR IMPRESIONES ILEGIBLES</td>
+                                            <td>Edwin Batz</td>
+                                            <td>LEGAL</td>
+                                            <td>2025-11-13 08:24:58</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Pablo Alvarez</td>
+                                            <td>ERROR DE VISUALIZACION PROSPECTO HIPOTECA</td>
+                                            <td>Brayan Gonzalez</td>
+                                            <td>COMERCIAL</td>
+                                            <td>2025-11-12 17:18:44</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Cristhian Aguilar</td>
+                                            <td>CINDY PAOLA GARCIA JUAREZ</td>
+                                            <td>Dulce Aquino</td>
+                                            <td>RRHH</td>
+                                            <td>2025-11-12 16:51:00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Cristhian Aguilar</td>
+                                            <td>Error en caso de Odoo</td>
+                                            <td>Jorge Tiul</td>
+                                            <td>COMERCIAL</td>
+                                            <td>2025-11-12 15:04:09</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Cristhian Aguilar</td>
+                                            <td>Actualizar cotizadores de Calem y Hollem en el Odoo</td>
+                                            <td>Lorena Godinez</td>
+                                            <td>COMERCIAL</td>
+                                            <td>2025-11-12 11:11:00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Cristhian Aguilar</td>
+                                            <td>Llamadas</td>
+                                            <td>Erick Javier Zacarias Muralles</td>
+                                            <td>QA</td>
+                                            <td>2025-11-11 13:51:41</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Cristhian Aguilar</td>
+                                            <td>Actualización política - SAC</td>
+                                            <td>José Álvarez</td>
+                                            <td>auditoria</td>
+                                            <td>2025-11-11 10:16:00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Cristhian Aguilar</td>
+                                            <td>Revision de actividades IA</td>
+                                            <td>Lorena Godinez</td>
+                                            <td>COMERCIAL</td>
+                                            <td>2025-11-11 08:37:06</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Cristhian Aguilar</td>
+                                            <td>Wassis que deje enviar audios</td>
+                                            <td>Lorena Godinez</td>
+                                            <td>COMERCIAL</td>
+                                            <td>2025-11-11 08:22:56</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Cristhian Aguilar</td>
+                                            <td>Wassix lentitud y no se encuentran numeros</td>
+                                            <td>Lorena Godinez</td>
+                                            <td>COMERCIAL</td>
+                                            <td>2025-11-11 08:08:26</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Pablo Alvarez</td>
+                                            <td>Claudia Cojoc</td>
+                                            <td>Dulce Aquino</td>
+                                            <td>RRHH</td>
+                                            <td>2025-11-10 16:24:09</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Pablo Alvarez</td>
+                                            <td>Solicitud de grabación de desembolso</td>
+                                            <td>Erick Javier Zacarias Muralles</td>
+                                            <td>QA</td>
+                                            <td>2025-11-10 08:42:59</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Observaciones Generales -->
+            <div class="observations">
+                <div class="observations-header">
+                    <span class="observations-icon">📋</span>
+                    <div class="observations-title">Observaciones Generales</div>
+                </div>
+                <ul class="observations-list">
+                    <li>Sistemas y conectividad mantienen estabilidad óptima</li>
+                    <li>Continúa el avance en mantenimientos de agencia central (6/8 áreas)</li>
+                    <li>Gestión de 24 tickets IT: 63% de resolución (15 finalizados, 6 en ejecución, 3 en espera)</li>
+                    <li>Wassix mantiene funcionamiento estable en todas las áreas</li>
+                    <li>Excelente desempeño en resolución de tickets durante la semana del 10 al 16 de noviembre</li>
+                </ul>
+            </div>
+        </section>
+
         <!-- Q6 Section (Semana 45) -->
-        <section class="quarter-section" id="week-45">
+        <section class="quarter-section hidden-week" id="week-45">
             <h2 class="quarter-title"> (Semana 45)</h2>
             
             <table class="indicators-table">
@@ -1505,6 +2094,26 @@
     <script>
     /* theme toggle removed */
 
+        // Toggle ticket details modal
+        function toggleTicketDetails() {
+            const modal = document.getElementById('ticketDetailsModal');
+            if (modal.style.display === 'none' || modal.style.display === '') {
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden'; // Prevent scrolling
+            } else {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto'; // Re-enable scrolling
+            }
+        }
+
+        // Close modal when clicking outside
+        document.addEventListener('click', function(event) {
+            const modal = document.getElementById('ticketDetailsModal');
+            if (event.target === modal) {
+                toggleTicketDetails();
+            }
+        });
+
         // Toggle weeks visibility
         function toggleWeeks() {
             const week40 = document.getElementById('week-40');
@@ -1512,6 +2121,7 @@
             const week42 = document.getElementById('week-42');
             const week43 = document.getElementById('week-43');
             const week44 = document.getElementById('week-44');
+            const week45 = document.getElementById('week-45');
             const toggleText = document.getElementById('toggle-text');
             const toggleIcon = document.getElementById('toggle-icon');
             
@@ -1523,7 +2133,8 @@
                 week42.classList.remove('hidden-week');
                 week43.classList.remove('hidden-week');
                 week44.classList.remove('hidden-week');
-                toggleText.textContent = 'Ocultar Semanas 40, 41, 42, 43 y 44';
+                week45.classList.remove('hidden-week');
+                toggleText.textContent = 'Ocultar Semanas 40, 41, 42, 43, 44 y 45';
                 toggleIcon.textContent = '🙈';
             } else {
                 week40.classList.add('hidden-week');
@@ -1531,7 +2142,8 @@
                 week42.classList.add('hidden-week');
                 week43.classList.add('hidden-week');
                 week44.classList.add('hidden-week');
-                toggleText.textContent = 'Mostrar Semanas 40, 41, 42, 43 y 44';
+                week45.classList.add('hidden-week');
+                toggleText.textContent = 'Mostrar Semanas 40, 41, 42, 43, 44 y 45';
                 toggleIcon.textContent = '👁️';
             }
         }
