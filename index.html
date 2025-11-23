@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -1505,7 +1506,7 @@
         </section>
 
         <!-- Q5.5 Section (Semana 46) -->
-        <section class="quarter-section" id="week-46">
+        <section class="quarter-section hidden-week" id="week-46">
             <h2 class="quarter-title"> (Semana 46 - 10 al 16 Noviembre)</h2>
             
             <table class="indicators-table">
@@ -1906,6 +1907,311 @@
             </div>
         </section>
 
+        <!-- Q5.6 Section (Semana 47) -->
+        <section class="quarter-section" id="week-47">
+            <h2 class="quarter-title"> (Semana 47 - 17 al 23 Noviembre)</h2>
+            
+            <table class="indicators-table">
+                <thead class="table-header">
+                    <tr>
+                        <th>📋 CATEGORÍA / INDICADOR</th>
+                        <th>🎯 META</th>
+                        <th>📊 ESTADO (%)</th>
+                        <th>✅ ESTADO ACTUAL</th>
+                        <th>📝 OBSERVACIONES</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- FILA 1 -->
+                    <tr class="table-row">
+                        <td class="category-cell">💻 Funcionamiento de Sistemas</td>
+                        <td class="meta-cell">100% Operativo - Sistemas estables sin errores ni inestabilidad</td>
+                        <td class="estado-cell">
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-progress="100"></div>
+                                </div>
+                                <span class="progress-text">100%</span>
+                            </div>
+                        </td>
+                        <td class="estado-actual-cell">
+                            <span class="status-badge status-completado">Completado</span>
+                        </td>
+                        <td class="observaciones-cell">
+                            Sin reporte de caída de sistemas
+                        </td>
+                    </tr>
+
+                    <!-- FILA 2 -->
+                    <tr class="table-row">
+                        <td class="category-cell">🌐 Conectividad Estable</td>
+                        <td class="meta-cell">Mantener 50 Mbps sin caídas en todas las agencias</td>
+                        <td class="estado-cell">
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-progress="100"></div>
+                                </div>
+                                <span class="progress-text">100%</span>
+                            </div>
+                        </td>
+                        <td class="estado-actual-cell">
+                            <span class="status-badge status-completado">Completado</span>
+                        </td>
+                        <td class="observaciones-cell">
+                            Estable central y agencias, sin reportes de incidencias
+                        </td>
+                    </tr>
+
+                    <!-- FILA 3 -->
+                    <tr class="table-row">
+                        <td class="category-cell">🔧 Mantenimiento Preventivo Cobán</td>
+                        <td class="meta-cell">Completar mantenimiento preventivo en agencia Cobán</td>
+                        <td class="estado-cell">
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-progress="100"></div>
+                                </div>
+                                <span class="progress-text">100%</span>
+                            </div>
+                        </td>
+                        <td class="estado-actual-cell">
+                            <span class="status-badge status-completado">Completado</span>
+                        </td>
+                        <td class="observaciones-cell">
+                            Mantenimiento completado
+                        </td>
+                    </tr>
+
+                    <!-- FILA 4 -->
+                    <tr class="table-row">
+                        <td class="category-cell">🏢 Mantenimientos Agencia Central</td>
+                        <td class="meta-cell">Completar 10 áreas programadas (1 área por semana)</td>
+                        <td class="estado-cell">
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-progress="80"></div>
+                                </div>
+                                <span class="progress-text">80%</span>
+                            </div>
+                        </td>
+                        <td class="estado-actual-cell">
+                            <span class="status-badge status-proceso">8/10</span>
+                        </td>
+                        <td class="observaciones-cell">
+                            Culminado mantenimiento con Contabilidad y Auditoría. Pendientes: Telemarketing, SAC
+                        </td>
+                    </tr>
+
+                    <!-- FILA 5 -->
+                    <tr class="table-row">
+                        <td class="category-cell">💰 Wassix Cobros y Boletas</td>
+                        <td class="meta-cell">Conectar Wassix de cobros y boletas</td>
+                        <td class="estado-cell">
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-progress="100"></div>
+                                </div>
+                                <span class="progress-text">100%</span>
+                            </div>
+                        </td>
+                        <td class="estado-actual-cell">
+                            <span class="status-badge status-completado">Completado</span>
+                        </td>
+                        <td class="observaciones-cell">
+                            Mantiene funcionamiento estable
+                        </td>
+                    </tr>
+
+                    <!-- FILA 6 -->
+                    <tr class="table-row">
+                        <td class="category-cell">🎫 Tickets IT</td>
+                        <td class="meta-cell">Gestión eficiente de tickets </td>
+                        <td class="estado-cell">
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-progress="80"></div>
+                                </div>
+                                <span class="progress-text">80%</span>
+                            </div>
+                        </td>
+                        <td class="estado-actual-cell">
+                            <span class="status-badge status-proceso clickable-badge" onclick="toggleTicketDetails47()">8/10 📊</span>
+                        </td>
+                        <td class="observaciones-cell">
+                            Total 10 tickets: 1 en espera, 1 en ejecución, 8 finalizados<br>
+                            <span style="color: var(--accent-600); font-weight: 600; cursor: pointer;" onclick="toggleTicketDetails47()">👉 Click para ver desglose detallado</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Modal/Desglose de Tickets -->
+            <div id="ticketDetailsModal47" class="ticket-modal" style="display: none;">
+                <div class="ticket-modal-content">
+                    <div class="ticket-modal-header">
+                        <h3>📊 Desglose de Tickets - Semana 47 (17 al 23 Noviembre)</h3>
+                        <button class="close-modal" onclick="toggleTicketDetails47()">✖</button>
+                    </div>
+                    <div class="ticket-modal-body">
+                        <!-- En Espera -->
+                        <div class="ticket-section">
+                            <div class="ticket-section-header waiting">
+                                <span class="ticket-count">1</span>
+                                <span class="ticket-title">⏳ EN ESPERA</span>
+                            </div>
+                            <div class="ticket-table-wrapper">
+                                <table class="ticket-detail-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Asignada a</th>
+                                            <th>Asunto</th>
+                                            <th>Cliente</th>
+                                            <th>Departamento</th>
+                                            <th>Creado el</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Cristhian Aguilar</td>
+                                            <td>Etapa del Boot de Referencia (Créditos)</td>
+                                            <td>Wilfredo Barrios</td>
+                                            <td>Creditos</td>
+                                            <td>2025-11-21 12:56:39</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- En Ejecución -->
+                        <div class="ticket-section">
+                            <div class="ticket-section-header progress">
+                                <span class="ticket-count">1</span>
+                                <span class="ticket-title">⚙️ EN EJECUCIÓN</span>
+                            </div>
+                            <div class="ticket-table-wrapper">
+                                <table class="ticket-detail-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Asignada a</th>
+                                            <th>Asunto</th>
+                                            <th>Cliente</th>
+                                            <th>Departamento</th>
+                                            <th>Creado el</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Cristhian Aguilar</td>
+                                            <td>Nuevo tablero</td>
+                                            <td>Lorena Godinez</td>
+                                            <td>Comercial</td>
+                                            <td>2025-11-19 12:58:01</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Finalizados -->
+                        <div class="ticket-section">
+                            <div class="ticket-section-header completed">
+                                <span class="ticket-count">8</span>
+                                <span class="ticket-title">✅ FINALIZADOS</span>
+                            </div>
+                            <div class="ticket-table-wrapper">
+                                <table class="ticket-detail-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Asignada a</th>
+                                            <th>Asunto</th>
+                                            <th>Cliente</th>
+                                            <th>Departamento</th>
+                                            <th>Creado el</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Cristhian Aguilar</td>
+                                            <td>APROBACIONES CHEQUES RETENIDOS</td>
+                                            <td>Richard Estuardo Vásquez Vásquez</td>
+                                            <td>SAC</td>
+                                            <td>2025-11-20 11:20:45</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Cristhian Aguilar</td>
+                                            <td>Motivos de perdida eliminados</td>
+                                            <td>Kevin De León</td>
+                                            <td>Comercial</td>
+                                            <td>2025-11-19 16:02:39</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Pablo Alvarez</td>
+                                            <td>encuesta</td>
+                                            <td>María José Recinos</td>
+                                            <td>RRHH</td>
+                                            <td>2025-11-19 09:15:13</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Cristhian Aguilar</td>
+                                            <td>Revision de leads IA</td>
+                                            <td>Lorena Godinez</td>
+                                            <td>Comercial</td>
+                                            <td>2025-11-19 08:54:21</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Cristhian Aguilar</td>
+                                            <td>SOLICITUD DE TECLADO Y ACCESOS TELEFONO COBRADOR LEGAL (IVAN)</td>
+                                            <td></td>
+                                            <td>Legal</td>
+                                            <td>2025-11-17 15:35:04</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Cristhian Aguilar</td>
+                                            <td>Cámaras escuintla</td>
+                                            <td>Erick Javier Zacarias Muralles</td>
+                                            <td>QA</td>
+                                            <td>2025-11-17 15:03:23</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Pablo Alvarez</td>
+                                            <td>CREACION DE USUARIOS PERSONAL DE RECIENTE INGRESO</td>
+                                            <td>Lidia Paná</td>
+                                            <td>Comercial</td>
+                                            <td>2025-11-17 11:49:07</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Cristhian Aguilar</td>
+                                            <td>Brayan 17 y 18 no estará en oficina</td>
+                                            <td>Lorena Godinez</td>
+                                            <td>Comercial</td>
+                                            <td>2025-11-17 08:03:14</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Observaciones Generales -->
+            <div class="observations">
+                <div class="observations-header">
+                    <span class="observations-icon">📋</span>
+                    <div class="observations-title">Observaciones Generales</div>
+                </div>
+                <ul class="observations-list">
+                    <li>Sistemas y conectividad mantienen estabilidad óptima</li>
+                    <li>Se culminó el mantenimiento con Contabilidad y Auditoría (8/10 áreas completadas)</li>
+                    <li>Pendientes para completar: Telemarketing y SAC</li>
+                    <li>Gestión de 10 tickets IT: 80% de resolución (8 finalizados, 1 en ejecución, 1 en espera)</li>
+                    <li>Wassix mantiene funcionamiento estable en todas las áreas</li>
+                    <li>Excelente desempeño en resolución de tickets durante la semana del 17 al 23 de noviembre</li>
+                </ul>
+            </div>
+        </section>
+
         <!-- Q6 Section (Semana 45) -->
         <section class="quarter-section hidden-week" id="week-45">
             <h2 class="quarter-title"> (Semana 45)</h2>
@@ -2106,11 +2412,27 @@
             }
         }
 
+        // Toggle ticket details modal for week 47
+        function toggleTicketDetails47() {
+            const modal = document.getElementById('ticketDetailsModal47');
+            if (modal.style.display === 'none' || modal.style.display === '') {
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden'; // Prevent scrolling
+            } else {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto'; // Re-enable scrolling
+            }
+        }
+
         // Close modal when clicking outside
         document.addEventListener('click', function(event) {
             const modal = document.getElementById('ticketDetailsModal');
+            const modal47 = document.getElementById('ticketDetailsModal47');
             if (event.target === modal) {
                 toggleTicketDetails();
+            }
+            if (event.target === modal47) {
+                toggleTicketDetails47();
             }
         });
 
