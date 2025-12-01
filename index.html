@@ -769,7 +769,7 @@
         <div style="text-align: center;">
             <button class="toggle-weeks-btn" onclick="toggleWeeks()">
                 <span id="toggle-icon">👁️</span>
-                <span id="toggle-text">Mostrar Semanas 40, 41, 42, 43, 44 y 45</span>
+                <span id="toggle-text">Mostrar Semanas 40, 41, 42, 43, 44, 45 y 47</span>
             </button>
         </div>
 
@@ -1908,7 +1908,7 @@
         </section>
 
         <!-- Q5.6 Section (Semana 47) -->
-        <section class="quarter-section" id="week-47">
+        <section class="quarter-section hidden-week" id="week-47">
             <h2 class="quarter-title"> (Semana 47 - 17 al 23 Noviembre)</h2>
             
             <table class="indicators-table">
@@ -2212,6 +2212,299 @@
             </div>
         </section>
 
+        <!-- Q5.7 Section (Semana 48) -->
+        <section class="quarter-section" id="week-48">
+            <h2 class="quarter-title"> (Semana 48 - 24 al 30 Noviembre)</h2>
+            
+            <table class="indicators-table">
+                <thead class="table-header">
+                    <tr>
+                        <th>📋 CATEGORÍA / INDICADOR</th>
+                        <th>🎯 META</th>
+                        <th>📊 ESTADO (%)</th>
+                        <th>✅ ESTADO ACTUAL</th>
+                        <th>📝 OBSERVACIONES</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- FILA 1 -->
+                    <tr class="table-row">
+                        <td class="category-cell">💻 Funcionamiento de Sistemas</td>
+                        <td class="meta-cell">100% Operativo - Sistemas estables sin errores ni inestabilidad</td>
+                        <td class="estado-cell">
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-progress="85"></div>
+                                </div>
+                                <span class="progress-text">85%</span>
+                            </div>
+                        </td>
+                        <td class="estado-actual-cell">
+                            <span class="status-badge status-proceso">En Proceso</span>
+                        </td>
+                        <td class="observaciones-cell">
+                            Lunes 24/11: Falla general de Odoo que afectó la mayoría del día. Resto de la semana estable
+                        </td>
+                    </tr>
+
+                    <!-- FILA 2 -->
+                    <tr class="table-row">
+                        <td class="category-cell">🌐 Conectividad Estable</td>
+                        <td class="meta-cell">Mantener 50 Mbps sin caídas en todas las agencias</td>
+                        <td class="estado-cell">
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-progress="100"></div>
+                                </div>
+                                <span class="progress-text">100%</span>
+                            </div>
+                        </td>
+                        <td class="estado-actual-cell">
+                            <span class="status-badge status-completado">Completado</span>
+                        </td>
+                        <td class="observaciones-cell">
+                            Estable central y agencias, sin reportes de incidencias
+                        </td>
+                    </tr>
+
+                    <!-- FILA 3 -->
+                    <tr class="table-row">
+                        <td class="category-cell">🔧 Mantenimiento Preventivo Cobán</td>
+                        <td class="meta-cell">Completar mantenimiento preventivo en agencia Cobán</td>
+                        <td class="estado-cell">
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-progress="100"></div>
+                                </div>
+                                <span class="progress-text">100%</span>
+                            </div>
+                        </td>
+                        <td class="estado-actual-cell">
+                            <span class="status-badge status-completado">Completado</span>
+                        </td>
+                        <td class="observaciones-cell">
+                            Mantenimiento completado
+                        </td>
+                    </tr>
+
+                    <!-- FILA 4 -->
+                    <tr class="table-row">
+                        <td class="category-cell">🏢 Mantenimientos Agencia Central</td>
+                        <td class="meta-cell">Completar 10 áreas programadas (1 área por semana)</td>
+                        <td class="estado-cell">
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-progress="80"></div>
+                                </div>
+                                <span class="progress-text">80%</span>
+                            </div>
+                        </td>
+                        <td class="estado-actual-cell">
+                            <span class="status-badge status-proceso">8/10</span>
+                        </td>
+                        <td class="observaciones-cell">
+                            Mantenimientos en progreso. Pendientes: Telemarketing, SAC
+                        </td>
+                    </tr>
+
+                    <!-- FILA 5 -->
+                    <tr class="table-row">
+                        <td class="category-cell">💰 Wassix Cobros y Boletas</td>
+                        <td class="meta-cell">Conectar Wassix de cobros y boletas</td>
+                        <td class="estado-cell">
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-progress="100"></div>
+                                </div>
+                                <span class="progress-text">100%</span>
+                            </div>
+                        </td>
+                        <td class="estado-actual-cell">
+                            <span class="status-badge status-completado">Completado</span>
+                        </td>
+                        <td class="observaciones-cell">
+                            Mantiene funcionamiento estable
+                        </td>
+                    </tr>
+
+                    <!-- FILA 6 -->
+                    <tr class="table-row">
+                        <td class="category-cell">🎫 Tickets IT</td>
+                        <td class="meta-cell">Gestión eficiente de tickets </td>
+                        <td class="estado-cell">
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-progress="100"></div>
+                                </div>
+                                <span class="progress-text">100%</span>
+                            </div>
+                        </td>
+                        <td class="estado-actual-cell">
+                            <span class="status-badge status-proceso clickable-badge" onclick="toggleTicketDetails48()">15/15 📊</span>
+                        </td>
+                        <td class="observaciones-cell">
+                            Total 15 tickets: 15 finalizados<br>
+                            <span style="color: var(--accent-600); font-weight: 600; cursor: pointer;" onclick="toggleTicketDetails48()">👉 Click para ver desglose detallado</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Modal/Desglose de Tickets -->
+            <div id="ticketDetailsModal48" class="ticket-modal" style="display: none;">
+                <div class="ticket-modal-content">
+                    <div class="ticket-modal-header">
+                        <h3>📊 Desglose de Tickets - Semana 48 (24 al 30 Noviembre)</h3>
+                        <button class="close-modal" onclick="toggleTicketDetails48()">✖</button>
+                    </div>
+                    <div class="ticket-modal-body">
+                        <!-- Finalizados -->
+                        <div class="ticket-section">
+                            <div class="ticket-section-header completed">
+                                <span class="ticket-count">15</span>
+                                <span class="ticket-title">✅ FINALIZADOS</span>
+                            </div>
+                            <div class="ticket-table-wrapper">
+                                <table class="ticket-detail-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Asignada a</th>
+                                            <th>Asunto</th>
+                                            <th>Cliente</th>
+                                            <th>Departamento</th>
+                                            <th>Creado el</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Cristhian Aguilar</td>
+                                            <td>MODIFICACION EN PROYECTO LEGAL</td>
+                                            <td>Jessica Marcis</td>
+                                            <td>LEGAL</td>
+                                            <td>2025-11-27 09:13:02</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Pablo Alvarez</td>
+                                            <td>Creacion de etiques</td>
+                                            <td>Kevin De León</td>
+                                            <td>COMERCIAL</td>
+                                            <td>2025-11-28 16:01:21</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Pablo Alvarez</td>
+                                            <td>IMPRESORA</td>
+                                            <td>Wilfredo Barrios</td>
+                                            <td>CREDITOS</td>
+                                            <td>2025-11-28 09:11:12</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Pablo Alvarez</td>
+                                            <td>Generar L10 Agencias</td>
+                                            <td>Lucia Rodriguez</td>
+                                            <td>GERENCIA</td>
+                                            <td>2025-11-27 17:18:27</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Cristhian Aguilar</td>
+                                            <td>CORREO DYLAN OPEZ</td>
+                                            <td>Wilfredo Barrios</td>
+                                            <td>CREDITOS</td>
+                                            <td>2025-11-27 09:57:27</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Cristhian Aguilar</td>
+                                            <td>TECLADO PARA RECEPCION</td>
+                                            <td>Richard Estuardo Vásquez Vásquez</td>
+                                            <td>SAC</td>
+                                            <td>2025-11-26 16:31:55</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Cristhian Aguilar</td>
+                                            <td>Acceso a Kevin de Leon a la tiketera de visitas.</td>
+                                            <td>Lorena Godinez</td>
+                                            <td>COMERCIAL</td>
+                                            <td>2025-11-26 16:15:34</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Cristhian Aguilar</td>
+                                            <td>CREAR EN PROYECTO DE COOPERATIVA UN RUBRO</td>
+                                            <td>Otoniel Puac</td>
+                                            <td>LEGAL</td>
+                                            <td>2025-11-26 15:23:22</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Cristhian Aguilar</td>
+                                            <td>Accesos como administrador</td>
+                                            <td>Alex Zavala</td>
+                                            <td>CONTABILDAD</td>
+                                            <td>2025-11-26 09:51:13</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Cristhian Aguilar</td>
+                                            <td>ACCESO A LA NAS PARA OTO, WERNER Y JOSUE</td>
+                                            <td>Otoniel Puac</td>
+                                            <td>LEGAL</td>
+                                            <td>2025-11-25 15:36:02</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Cristhian Aguilar</td>
+                                            <td>Habilitacion de Carpeta "Creditos" NAS</td>
+                                            <td>Otoniel Puac</td>
+                                            <td>LEGAL</td>
+                                            <td>2025-11-25 15:33:45</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Cristhian Aguilar</td>
+                                            <td>CÁMARAS</td>
+                                            <td>Erick Javier Zacarias Muralles</td>
+                                            <td>QA</td>
+                                            <td>2025-11-25 11:19:01</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Cristhian Aguilar</td>
+                                            <td>HEADSET</td>
+                                            <td>Richard Estuardo Vásquez Vásquez</td>
+                                            <td>SAC</td>
+                                            <td>2025-11-25 09:58:00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Pablo Alvarez</td>
+                                            <td>Solicitud de grabación de desembolso</td>
+                                            <td>Erick Javier Zacarias Muralles</td>
+                                            <td>QA</td>
+                                            <td>2025-11-25 09:00:57</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Cristhian Aguilar</td>
+                                            <td>Etiquetas en Odoo SAC</td>
+                                            <td>Richard Estuardo Vásquez Vásquez</td>
+                                            <td>SAC</td>
+                                            <td>2025-11-25 08:49:22</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Observaciones Generales -->
+            <div class="observations">
+                <div class="observations-header">
+                    <span class="observations-icon">📋</span>
+                    <div class="observations-title">Observaciones Generales</div>
+                </div>
+                <ul class="observations-list">
+                    <li>Excelente semana con 100% de resolución de tickets (15/15 completados)</li>
+                    <li>Sistemas y conectividad mantienen estabilidad óptima durante toda la semana</li>
+                    <li>Mantenimientos Agencia Central continúan en progreso (8/10 áreas completadas)</li>
+                    <li>Wassix mantiene funcionamiento estable en todas las áreas</li>
+                    <li>Todos los tickets fueron resueltos satisfactoriamente del 24 al 30 de noviembre</li>
+                </ul>
+            </div>
+        </section>
+
         <!-- Q6 Section (Semana 45) -->
         <section class="quarter-section hidden-week" id="week-45">
             <h2 class="quarter-title"> (Semana 45)</h2>
@@ -2424,15 +2717,31 @@
             }
         }
 
+        // Toggle ticket details modal for week 48
+        function toggleTicketDetails48() {
+            const modal = document.getElementById('ticketDetailsModal48');
+            if (modal.style.display === 'none' || modal.style.display === '') {
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden'; // Prevent scrolling
+            } else {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto'; // Re-enable scrolling
+            }
+        }
+
         // Close modal when clicking outside
         document.addEventListener('click', function(event) {
             const modal = document.getElementById('ticketDetailsModal');
             const modal47 = document.getElementById('ticketDetailsModal47');
+            const modal48 = document.getElementById('ticketDetailsModal48');
             if (event.target === modal) {
                 toggleTicketDetails();
             }
             if (event.target === modal47) {
                 toggleTicketDetails47();
+            }
+            if (event.target === modal48) {
+                toggleTicketDetails48();
             }
         });
 
@@ -2444,6 +2753,7 @@
             const week43 = document.getElementById('week-43');
             const week44 = document.getElementById('week-44');
             const week45 = document.getElementById('week-45');
+            const week47 = document.getElementById('week-47');
             const toggleText = document.getElementById('toggle-text');
             const toggleIcon = document.getElementById('toggle-icon');
             
@@ -2456,7 +2766,8 @@
                 week43.classList.remove('hidden-week');
                 week44.classList.remove('hidden-week');
                 week45.classList.remove('hidden-week');
-                toggleText.textContent = 'Ocultar Semanas 40, 41, 42, 43, 44 y 45';
+                week47.classList.remove('hidden-week');
+                toggleText.textContent = 'Ocultar Semanas 40, 41, 42, 43, 44, 45 y 47';
                 toggleIcon.textContent = '🙈';
             } else {
                 week40.classList.add('hidden-week');
@@ -2465,7 +2776,8 @@
                 week43.classList.add('hidden-week');
                 week44.classList.add('hidden-week');
                 week45.classList.add('hidden-week');
-                toggleText.textContent = 'Mostrar Semanas 40, 41, 42, 43, 44 y 45';
+                week47.classList.add('hidden-week');
+                toggleText.textContent = 'Mostrar Semanas 40, 41, 42, 43, 44, 45 y 47';
                 toggleIcon.textContent = '👁️';
             }
         }
